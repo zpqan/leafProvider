@@ -1,0 +1,74 @@
+[
+  {
+    "id": 10568,
+    "site_id": 789,
+    "catalog_id": 773,
+    "name": "Brunch",
+    "description": "",
+    "is_active": true,
+    "position": 0
+  },
+  {
+    "id": 10569,
+    "site_id": 789,
+    "catalog_id": 773,
+    "name": "Breakfast",
+    "description": "",
+    "is_active": true,
+    "position": 1
+  },
+  {
+    "id": 10570,
+    "site_id": 789,
+    "catalog_id": 773,
+    "name": "Crepe",
+    "description": "",
+    "is_active": true,
+    "position": 2
+  },
+  {
+    "id": 10571,
+    "site_id": 789,
+    "catalog_id": 773,
+    "name": "Dinner",
+    "description": "",
+    "is_active": true,
+    "position": 3
+  },
+  {
+    "id": 10572,
+    "site_id": 789,
+    "catalog_id": 773,
+    "name": "Burgers",
+    "description": "",
+    "is_active": true,
+    "position": 4
+  },
+  {
+    "id": 10574,
+    "site_id": 789,
+    "catalog_id": 773,
+    "name": "Drinks",
+    "description": "",
+    "is_active": true,
+    "position": 5
+  },
+  {
+    "id": 10575,
+    "site_id": 789,
+    "catalog_id": 773,
+    "name": "Salads",
+    "description": "",
+    "is_active": true,
+    "position": 6
+  },
+  {
+    "id": 10577,
+    "site_id": 789,
+    "catalog_id": 773,
+    "name": "Gift Cards",
+    "description": "Gift Cards For Ordering",
+    "is_active": true,
+    "position": 7
+  }
+]

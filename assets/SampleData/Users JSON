@@ -1,0 +1,62 @@
+[
+  {
+    "id": 7749,
+    "site_id": 789,
+    "user_name": "leaf-dev-restaurant",
+    "first": "Bob",
+    "last": "Green",
+    "email": "qa+leaf-dev-restaurant@leaf.me",
+    "active": true,
+    "hire_date": "2014-05-12T04:00:00.000Z"
+  },
+  {
+    "id": 8383,
+    "site_id": 789,
+    "user_name": "qa+johnsmith@leaf.me",
+    "first": "John",
+    "last": "Smith",
+    "email": "qa+johnsmith@leaf.me",
+    "active": true,
+    "hire_date": "2014-05-12T04:00:00.000Z"
+  },
+  {
+    "id": 8384,
+    "site_id": 789,
+    "user_name": "qa+lisajones@leaf.me",
+    "first": "Lisa",
+    "last": "Jones",
+    "email": "qa+lisajones@leaf.me",
+    "active": true,
+    "hire_date": "2014-05-12T04:00:00.000Z"
+  },
+  {
+    "id": 8389,
+    "site_id": 789,
+    "user_name": "eroleaf@vngrs.com",
+    "first": "Erol",
+    "last": "Te",
+    "email": "eroleaf@vngrs.com",
+    "active": true,
+    "hire_date": "2014-05-12T04:00:00.000Z"
+  },
+  {
+    "id": 8395,
+    "site_id": 789,
+    "user_name": "erol@leaf.me",
+    "first": "Erol",
+    "last": "Tek",
+    "email": "erol@leaf.me",
+    "active": false,
+    "hire_date": "2014-04-12T04:00:00.000Z"
+  },
+  {
+    "id": 8399,
+    "site_id": 789,
+    "user_name": "tableUser@leaf.me",
+    "first": "Erol",
+    "last": "Role",
+    "email": "tableuser@leaf.me",
+    "active": true,
+    "hire_date": "2014-04-12T04:00:00.000Z"
+  }
+]

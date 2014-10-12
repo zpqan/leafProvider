@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="line_item_id"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label1"
+        android:layout_toRightOf="@id/label1"
+        android:hint="(integer, optional)"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="line_item_id"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label1"
+        android:text="catalog_item_modifier_id"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label2"
+        android:layout_toRightOf="@id/label2"
+        android:hint="(integer, optional)"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="catalog_item_modifier_id"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label3"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label2"
+        android:text="quantity"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label3"
+        android:layout_toRightOf="@id/label3"
+        android:hint="(number optional)"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:tag="quantity"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label4"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label3"
+        android:text="notes"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label4"
+        android:layout_toRightOf="@id/label4"
+        android:hint="(string, optional)"
+        android:inputType="text"
+        android:singleLine="true"
+        android:tag="notes"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label5"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label4"
+        android:text="deleted"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Spinner
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignTop="@id/label5"
+        android:layout_toRightOf="@id/label5"
+        android:hint="(boolean, optional)"
+        android:inputType="text"
+        android:singleLine="true"
+        android:tag="deleted"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label6"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label5"
+        android:text="dirty"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Spinner
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignTop="@id/label6"
+        android:layout_toRightOf="@id/label6"
+        android:textSize="12sp"
+        android:inputType="number"
+        android:singleLine="true" 
+        android:tag="dirty"
+        android:hint="(boolean, optional)"/>
+
+ 
+</RelativeLayout>

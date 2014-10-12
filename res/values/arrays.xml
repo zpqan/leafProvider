@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="leaftypes">
+        <item>catalog_categories</item>
+        <item>catalog_item_modifier_groups</item>
+        <item>catalog_item_modifiers</item>
+        <item>catalog_items</item>
+        <item>catalogs</item>
+        <item>customers</item>
+        <item>discounts</item>
+        <item>heartbeat</item>
+        <item>jobcodes</item>
+        <item>line_item_modifiers</item>
+        <item>line_items</item>
+        <item>orders</item>
+        <item>payment_apps</item>
+        <item>payment_types</item>
+        <item>payments</item>
+        <item>printers</item>
+        <item>providers</item>
+        <item>report_columns</item>
+        <item>report_data_types</item>
+        <item>report_parameters</item>
+        <item>reports</item>
+        <item>sites</item>
+        <item>tables</item>
+        <item>timesheets</item>
+        <item>users</item>
+    </string-array>
+    <string-array name="catalog_categories_params">
+        <item>site_id</item>
+        <item>category_name</item>
+        <item>catalog_id</item>
+        <item>is_active</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="catalog_item_modifier_groups_params">
+        <item>site_id</item>
+        <item>catalog_id</item>
+        <item>name</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="catalog_item_modifiers_params">
+        <item>catalog_id</item>
+        <item>site_id</item>
+        <item>barcode</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="catalog_items_params">
+        <item>site_id</item>
+        <item>catalog_id</item>
+        <item>is_active</item>
+        <item>barcode</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="catalogs_params">
+        <item>site_id</item>
+    </string-array>
+    <string-array name="customers_params">
+        <item>site_id</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="discounts_params">
+        <item>line_item_id</item>
+        <item>order_id</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="heartbeat_params"></string-array>
+    <string-array name="jobcodes_params">
+        <item>site_id</item>
+        <item>name</item>
+        <item>active</item>
+    </string-array>
+    <string-array name="line_item_modifiers_params">
+        <item>line_item_id</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="line_items_params">
+        <item>site_id</item>
+        <item>order_id</item>
+        <item>number</item>
+        <item>start</item>
+        <item>end</item>
+        <item>deleted</item>
+    </string-array>
+    <string-array name="orders_params">
+        <item>site_id</item>
+        <item>start</item>
+        <item>end</item>
+        <item>open</item>
+        <item>order_number</item>
+        <item>modification_start</item>
+        <item>modification_end</item>
+        <item>version</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="payment_apps_params"></string-array>
+    <string-array name="payment_types_params"></string-array>
+    <string-array name="payments_params">
+        <item>site_id</item>
+        <item>order_id</item>
+        <item>start</item>
+        <item>end</item>
+        <item>processed</item>
+        <item>voided</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="printers_params">
+        <item>site_id</item>
+        <item>is_active</item>
+        <item>name</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="providers_params">
+        <item>name</item>
+        <item>contact_name</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="report_columns_params">
+        <item>report_id</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="report_data_types_params">
+        <item>id</item>
+    </string-array>
+    <string-array name="report_parameters_params">
+        <item>report_id</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="reports_params">
+        <item>name</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="sites_params">
+        <item>name</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="tables_params">
+        <item>site_id</item>
+        <item>name</item>
+        <item>active</item>
+        <item>in_use</item>
+        <item>deleted</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="timesheets_params">
+        <item>site_id</item>
+        <item>user_id</item>
+        <item>jobcode_id</item>
+        <item>clock_in_start</item>
+        <item>clock_in_end</item>
+        <item>clock_out_start</item>
+        <item>clock_out_end</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="users_params">
+        <item>user_name</item>
+        <item>site_id</item>
+        <item>active</item>
+        <item>start</item>
+        <item>end</item>
+        <item>page</item>
+        <item>per_page</item>
+    </string-array>
+    <string-array name="boolean_required">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+    <string-array name="boolean_optional">
+        <item></item>
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+
+</resources>

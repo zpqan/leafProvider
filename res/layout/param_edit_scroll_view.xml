@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ScrollView
+        android:id="@+id/param_scrollview"
+        android:layout_width="@dimen/param_list_width"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+         >
+
+        <LinearLayout
+            android:id="@+id/param_line_holder"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/jsonwatcher"
+        android:layout_width="@dimen/param_list_width"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        ></TextView>
+</RelativeLayout>

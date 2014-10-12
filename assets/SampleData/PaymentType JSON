@@ -1,0 +1,7 @@
+{
+  "id": 10,
+  "name": "Cash",
+  "desc": "Cash payment method",
+  "type_num": 1,
+  "display_on_presenter": true
+}

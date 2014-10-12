@@ -1,0 +1,29 @@
+[
+  {
+    "id": 112935,
+    "clock_in": "2014-05-12T15:13:00.000Z",
+    "clock_out": "2014-05-12T04:00:00.000Z",
+    "status": "Clocked in",
+    "user_id": 8384,
+    "site_id": 789,
+    "jobcode_id": 1508
+  },
+  {
+    "id": 112946,
+    "clock_in": "2014-05-12T15:22:00.000Z",
+    "clock_out": "2014-05-12T04:00:00.000Z",
+    "status": "Clocked in",
+    "user_id": 7749,
+    "site_id": 789,
+    "jobcode_id": 1
+  },
+  {
+    "id": 113082,
+    "clock_in": "2014-05-12T19:32:00.000Z",
+    "clock_out": "2014-05-12T19:41:00.000Z",
+    "status": "Clocked out",
+    "user_id": 8383,
+    "site_id": 789,
+    "jobcode_id": 1508
+  }
+]

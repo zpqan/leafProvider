@@ -1,0 +1,22 @@
+[
+  {
+    "id": 789,
+    "name": "Leafy Sandbox Kitchen",
+    "merchant_id": "100000005685",
+    "terminal_id": "78561338",
+    "tax_rates": [
+      {
+        "name": "food",
+        "rate": 0.0625
+      },
+      {
+        "name": "sales",
+        "rate": 0.0625
+      },
+      {
+        "name": "beverage",
+        "rate": 0.0625
+      }
+    ]
+  }
+]

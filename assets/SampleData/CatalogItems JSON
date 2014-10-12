@@ -1,0 +1,264 @@
+[
+  {
+    "id": 1792,
+    "name": "Purchase (non-taxable)",
+    "description": "Item for cash purchase without tax",
+    "price": 1,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 26161,
+    "name": "Petty Cash Out",
+    "description": "Item for petty cash disbursement",
+    "price": 1,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 26162,
+    "name": "Petty Cash In",
+    "description": "Item for petty cash return",
+    "price": 1,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 26163,
+    "name": "Gift Card",
+    "description": "Purchase of a gift card",
+    "price": 1,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124465,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10568,
+    "name": "Big Brunch",
+    "description": "",
+    "price": 6.95,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124466,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10569,
+    "name": "Egg",
+    "description": "",
+    "price": 3,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124467,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10569,
+    "name": "Capn Crunch French Toast",
+    "description": "Yummy",
+    "price": 7.95,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124468,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10569,
+    "name": "Migas",
+    "description": "",
+    "price": 4.5,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124469,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10569,
+    "name": "Egg & Meat",
+    "description": "",
+    "price": 5,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124470,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10569,
+    "name": "Matzah Brei",
+    "description": "",
+    "price": 5.25,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124471,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10570,
+    "name": "Greek",
+    "description": "",
+    "price": 9.95,
+    "is_active": false,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124472,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10570,
+    "name": "Milano",
+    "description": "",
+    "price": 9.55,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124473,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10570,
+    "name": "Florentine",
+    "description": "",
+    "price": 9.25,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124474,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10571,
+    "name": "NY Strip",
+    "description": "",
+    "price": 20,
+    "is_active": true,
+    "number_in_stock": 8
+  },
+  {
+    "id": 124475,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10571,
+    "name": "Steak Dinner",
+    "description": "",
+    "price": 17,
+    "is_active": true,
+    "number_in_stock": 5
+  },
+  {
+    "id": 124477,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10572,
+    "name": "Hamburger",
+    "description": "",
+    "price": 9.25,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124478,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10572,
+    "name": "Chicken Burger",
+    "description": "",
+    "price": 8.95,
+    "is_active": true,
+    "number_in_stock": 3
+  },
+  {
+    "id": 124479,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10572,
+    "name": "Tofu Burger",
+    "description": "",
+    "price": 3.25,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124482,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10574,
+    "name": "Bloody Mary",
+    "description": "",
+    "price": 7.95,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124483,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10574,
+    "name": "Screwdriver",
+    "description": "",
+    "price": 7.95,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124484,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10575,
+    "name": "Caprese",
+    "description": "",
+    "price": 6.95,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124485,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10575,
+    "name": "Chef Salad",
+    "description": "",
+    "price": 5.95,
+    "is_active": true,
+    "number_in_stock": 0
+  },
+  {
+    "id": 124486,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10575,
+    "name": "Fruit Salad",
+    "description": "",
+    "price": 6.95,
+    "is_active": false,
+    "number_in_stock": 2
+  },
+  {
+    "id": 1791,
+    "name": "Purchase (taxable)",
+    "description": "Item for cash purchase with tax",
+    "price": 1,
+    "is_active": true,
+    "barcode": "000055555555",
+    "number_in_stock": 0
+  },
+  {
+    "id": 124476,
+    "site_id": 789,
+    "catalog_id": 773,
+    "category_id": 10571,
+    "name": "Chopped Steak",
+    "description": "",
+    "price": 11.95,
+    "is_active": true,
+    "barcode": "123456789",
+    "number_in_stock": 25
+  }
+]

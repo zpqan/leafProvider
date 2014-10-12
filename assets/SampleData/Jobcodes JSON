@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "site_id": 789,
+    "name": "Default",
+    "active": false,
+    "description": "Default job code for users when they have none assigned.",
+    "hours_before_overtime": 0,
+    "rates": [],
+    "pay_period_id": 1,
+    "position": 0
+  },
+  {
+    "id": 1508,
+    "site_id": 789,
+    "name": "Server",
+    "active": true,
+    "description": "",
+    "hours_before_overtime": 40,
+    "rates": [
+      {
+        "type": "normal",
+        "rate": 10
+      },
+      {
+        "type": "overtime",
+        "rate": 10
+      }
+    ],
+    "pay_period_id": 1,
+    "position": 0
+  },
+  {
+    "id": 1509,
+    "site_id": 789,
+    "name": "Manager",
+    "active": true,
+    "hours_before_overtime": 0,
+    "rates": [
+      {
+        "type": "normal",
+        "rate": 10
+      }
+    ],
+    "pay_period_id": 1,
+    "position": 0
+  },
+  {
+    "id": 1510,
+    "site_id": 789,
+    "name": "Cagdas",
+    "active": true,
+    "hours_before_overtime": 0,
+    "rates": [
+      {
+        "type": "normal",
+        "rate": 10
+      }
+    ],
+    "pay_period_id": 1,
+    "position": 0
+  }
+]

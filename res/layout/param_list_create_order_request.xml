@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="site_id"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label1"
+        android:layout_toRightOf="@id/label1"
+        android:hint="(integer, optional)"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="site_id"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label1"
+        android:text="user_id"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label2"
+        android:layout_toRightOf="@id/label2"
+        android:hint="(integer, optional)"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="user_id"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/label4"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label2"
+        android:text="order_type"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Spinner
+        android:id="@+id/value4"
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/label4"
+        android:layout_toRightOf="@id/label4"
+        android:tag="order_type" />
+
+    <TextView
+        android:id="@+id/label5"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/value4"
+        android:text="table_id"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label5"
+        android:layout_toRightOf="@id/label5"
+        android:hint="(integer, optional)"
+        android:imeOptions="actionNext"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:singleLine="true"
+        android:tag="table_id"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/label6"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label5"
+        android:text="serve_time"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label6"
+        android:layout_toRightOf="@id/label6"
+        android:hint="(string, optional)"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:singleLine="true"
+        android:tag="serve_time"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/label7"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label6"
+        android:text="num_guests"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label7"
+        android:layout_toRightOf="@id/label7"
+        android:hint="(integer, optional)"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="num_guests"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/label8"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label7"
+        android:text="tab_name"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label8"
+        android:layout_toRightOf="@id/label8"
+        android:hint="(string, optional)"
+        android:inputType="text"
+        android:singleLine="true"
+        android:tag="tab_name"
+        android:textSize="14sp" />
+
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/dmo_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="8"
+        android:text="id"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/dmo_short"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dmo_id"
+        android:layout_alignParentTop="true"
+        android:ems="4"
+        android:text="short"
+        android:textAppearance="?android:attr/textAppearanceMedium" >
+    </TextView>
+    
+    <TextView
+        android:id="@+id/dmo_med"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dmo_short"
+        android:layout_alignParentTop="true"
+        android:ems="12"
+        android:text="med"
+        android:textAppearance="?android:attr/textAppearanceMedium" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/dmo_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dmo_med"
+        android:layout_alignParentTop="true"
+        android:ems="30"
+        android:text="long"
+        android:textAppearance="?android:attr/textAppearanceMedium" >
+    </TextView>
+    <TextView
+        android:id="@+id/dmo_full1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/dmo_id"
+        android:text="dmo_full1"
+        android:textAppearance="?android:attr/textAppearanceSmall" >
+    </TextView>
+    <TextView
+        android:id="@+id/dmo_full2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/dmo_full1"
+        android:text="dmo_full2"
+        android:textAppearance="?android:attr/textAppearanceSmall" >
+    </TextView>
+</RelativeLayout>

@@ -1,0 +1,1959 @@
+API Documentation
+catalog_categories
+Catalog categories are the sets of catalog items sold by a Leaf merchant.
+Show/Hide List Operations Expand Operations Raw
+GET /catalog_categories/{id} Returns details about a catalog category.
+Response Class
+ModelModel Schema
+CatalogCategory {
+id (integer, optional),
+site_id (integer, optional),
+catalog_id (integer, optional),
+name (string, optional),
+description (string, optional),
+position (integer, optional),
+course_id (integer, optional),
+_active (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the catalog category	path	integer
+
+GET /catalog_categories Search for catalog categories by name, site, catalog and status. Returns a list of catalog categories.
+Response Class
+ModelModel Schema
+CatalogCategory {
+id (integer, optional),
+site_id (integer, optional),
+catalog_id (integer, optional),
+name (string, optional),
+description (string, optional),
+position (integer, optional),
+course_id (integer, optional),
+_active (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		site id of catalog category	query	integer
+category_name		category name of catalog category	query	integer
+catalog_id		catalog id of catalog category	query	integer
+is_active		catalog category is active	query	boolean
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+catalog_item_modifier_groups
+Catalog item modifier groups are groups of modifiers, e.g. sides.
+Show/Hide List Operations Expand Operations Raw
+GET /catalog_item_modifier_groups/{id} Returns details about a catalog item modifier group.
+Response Class
+ModelModel Schema
+CatalogItemModifierGroup {
+id (integer, optional),
+site_id (integer, optional),
+catalog_id (integer, optional),
+name (string, optional),
+description (string, optional),
+price (number, optional),
+rule_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the catalog item modifier group	path	integer
+
+GET /catalog_item_modifier_groups Search for catalog item modifier groups by catalog, site and name. Returns a list of catalog item modifier groups.
+Response Class
+ModelModel Schema
+CatalogItemModifierGroup {
+id (integer, optional),
+site_id (integer, optional),
+catalog_id (integer, optional),
+name (string, optional),
+description (string, optional),
+price (number, optional),
+rule_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		siteId of modifier group	query	integer
+catalog_id		catalogId of modifier group	query	integer
+name		name of modifier group	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+catalog_item_modifiers
+Catalog item modifiers are optional modifications available to customize a specific Item, e.g. “extra bacon” on a hamburger.
+Show/Hide List Operations Expand Operations Raw
+GET /catalog_item_modifiers/{id} Returns details about a catalog item modifier.
+Response Class
+ModelModel Schema
+CatalogItemModifier {
+id (integer, optional),
+site_id (integer, optional),
+catalog_id (integer, optional),
+barcode (string, optional),
+name (string, optional),
+description (string, optional),
+price (number, optional),
+cost (number, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the catalog item modifier	path	integer
+
+GET /catalog_item_modifiers Search for catalog item modifiers by catalog, site and barcode. Returns a list of catalog item modifiers.
+Response Class
+ModelModel Schema
+CatalogItemModifier {
+id (integer, optional),
+site_id (integer, optional),
+catalog_id (integer, optional),
+barcode (string, optional),
+name (string, optional),
+description (string, optional),
+price (number, optional),
+cost (number, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+catalog_id		catalogId of modifier	query	integer
+site_id		siteId of modifier	query	integer
+barcode		barcode of modifier	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+catalog_items
+Catalog items are the base unit of products sold by a Leaf merchant and can be physical goods, services, etc.
+Show/Hide List Operations Expand Operations Raw
+GET /catalog_items/{id} Returns details about a catalog item.
+Response Class
+ModelModel Schema
+CatalogItem {
+id (integer, optional),
+site_id (integer, optional),
+catalog_id (integer, optional),
+category_id (integer, optional),
+printer_id (integer, optional),
+name (string, optional),
+description (string, optional),
+price (number, optional),
+barcode (string, optional),
+special (Object, optional),
+use_integer_units (boolean, optional),
+stock (Stock, optional),
+unit_type (string, optional),
+type_id (integer, optional),
+number_in_stock (number, optional),
+_active (boolean, optional)
+}
+Stock {
+total (integer, optional),
+remaining (integer, optional),
+restock_level (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the catalog item	path	integer
+
+GET /catalog_items Search for catalog items by catalog, site and barcode. Returns a list of catalog items.
+Response Class
+ModelModel Schema
+CatalogItem {
+id (integer, optional),
+site_id (integer, optional),
+catalog_id (integer, optional),
+category_id (integer, optional),
+printer_id (integer, optional),
+name (string, optional),
+description (string, optional),
+price (number, optional),
+barcode (string, optional),
+special (Object, optional),
+use_integer_units (boolean, optional),
+stock (Stock, optional),
+unit_type (string, optional),
+type_id (integer, optional),
+number_in_stock (number, optional),
+_active (boolean, optional)
+}
+Stock {
+total (integer, optional),
+remaining (integer, optional),
+restock_level (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		site id of catalog item	query	integer
+catalog_id		catalog id of catalog item	query	integer
+is_active		catalog item is active	query	boolean
+barcode		barcode of catalog item	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+catalogs
+Catalogs belong to sites. It's used to display items for a particular site.
+Show/Hide List Operations Expand Operations Raw
+GET /catalogs/{id} Return details about a catalog.
+Response Class
+ModelModel Schema
+Catalog {
+id (integer, optional),
+name (string, optional),
+site_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the catalog	path	integer
+
+GET /catalogs Search for catalogs by site ID. Returns a list of catalogs by site ID.
+Response Class
+ModelModel Schema
+Catalog {
+id (integer, optional),
+name (string, optional),
+site_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the site	query	integer
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+customers
+A paying consumer at a Leaf merchant.
+Show/Hide List Operations Expand Operations Raw
+GET /customers/{id} Returns details about a customer.
+Response Class
+ModelModel Schema
+Customer {
+id (integer, optional),
+first_name (string, optional),
+last_name (string, optional),
+phone (string, optional),
+notes (string, optional),
+address (string, optional),
+address2 (string, optional),
+city (string, optional),
+postal_code (string, optional),
+state (string, optional),
+email (string, optional),
+site_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the customer	path	integer
+
+GET /customers Search for customer by site. Returns a list of customers.
+Response Class
+ModelModel Schema
+Customer {
+id (integer, optional),
+first_name (string, optional),
+last_name (string, optional),
+phone (string, optional),
+notes (string, optional),
+address (string, optional),
+address2 (string, optional),
+city (string, optional),
+postal_code (string, optional),
+state (string, optional),
+email (string, optional),
+site_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the site	query	integer
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+discounts
+Discounts are dollar and percentage amounts taken off of an Order or Line Item.
+Show/Hide List Operations Expand Operations Raw
+GET /discounts/{id} Return the details of a discount
+Response Class
+ModelModel Schema
+Discount {
+id (integer, optional),
+order_id (integer, optional),
+line_item_id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+amount (number, optional),
+percentage (number, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the Discount	path	integer
+
+GET /discounts Search for Discounts by lineItem or order. Returns a list of discounts.
+Response Class
+ModelModel Schema
+Discount {
+id (integer, optional),
+order_id (integer, optional),
+line_item_id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+amount (number, optional),
+percentage (number, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+line_item_id		ID of the Line Item	query	integer
+order_id		ID of the Order	query	integer
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+heartbeat
+Heartbeat shows the Leaf API status in order to validate that production services are running.
+Show/Hide List Operations Expand Operations Raw
+GET /heartbeat Show API status.
+Response Class
+ModelModel Schema
+Heartbeat {
+status (string, optional),
+message (string, optional)
+}
+
+Response Content Type 
+ 
+jobcodes
+Job codes are the various employee positions at a Leaf merchant. Along with timesheets, they are part of the Leaf payroll system.
+Show/Hide List Operations Expand Operations Raw
+GET /jobcodes/{id} Search for jobcodes by site ID, name. Returns a list of job codes with site ID and name.
+Response Class
+ModelModel Schema
+Jobcode {
+id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+active (boolean, optional),
+description (string, optional),
+hours_before_overtime (number, optional),
+rates (array[JobcodeRate], optional),
+pay_period_id (integer, optional),
+position (integer, optional)
+}
+JobcodeRate {
+type (string, optional) = ['normal' or 'overtime'],
+rate (number, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the jobcode	path	integer
+
+GET /jobcodes Returns details about a jobcode.
+Response Class
+ModelModel Schema
+Jobcode {
+id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+active (boolean, optional),
+description (string, optional),
+hours_before_overtime (number, optional),
+rates (array[JobcodeRate], optional),
+pay_period_id (integer, optional),
+position (integer, optional)
+}
+JobcodeRate {
+type (string, optional) = ['normal' or 'overtime'],
+rate (number, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the site	query	integer
+name		partial name of the job	query	string
+active		job active or not	query	boolean
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+line_item_modifiers
+Line item modifiers are the instantiation of a catalog item modifier on an Order.
+Show/Hide List Operations Expand Operations Raw
+GET /line_item_modifiers/{id} Return the details of a line item modifier.
+Response Class
+ModelModel Schema
+LineItemModifier {
+id (integer, optional),
+site_id (integer, optional),
+line_item_id (integer, optional),
+catalog_item_modifier_id (integer, optional),
+name (string, optional),
+price (number, optional),
+quantity (number, optional),
+notes (string, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the line item modifier	path	integer
+
+GET /line_item_modifiers Search for modifiers by order. Returns a list of modifiers.
+Response Class
+ModelModel Schema
+LineItemModifier {
+id (integer, optional),
+site_id (integer, optional),
+line_item_id (integer, optional),
+catalog_item_modifier_id (integer, optional),
+name (string, optional),
+price (number, optional),
+quantity (number, optional),
+notes (string, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+line_item_id		ID of the line item	query	integer
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+line_items
+Line Items are the instantiation of an Item on an Order.
+Show/Hide List Operations Expand Operations Raw
+GET /line_items/{id} get line item for the given id
+Response Class
+ModelModel Schema
+LineItem {
+id (integer, optional),
+order_id (integer, optional),
+site_id (Object, optional),
+item_id (Object, optional),
+price (number, optional),
+quantity (number, optional),
+number (string, optional),
+name (string, optional),
+tax_reason (string, optional),
+subtotal (number, optional),
+notes (string, optional),
+sent_to_kitchen (Object, optional),
+price_override (number, optional),
+unit_type (string, optional),
+course (string, optional),
+seat_position (Object, optional),
+merchandise_type (MerchandiseType, optional),
+discounts (array[Discount], optional),
+line_item_modifiers (array[LineItemModifier], optional),
+_taxable (Object, optional)
+}
+MerchandiseType {
+id (integer, optional)
+}
+Discount {
+id (integer, optional),
+order_id (integer, optional),
+line_item_id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+amount (number, optional),
+percentage (number, optional)
+}
+LineItemModifier {
+id (integer, optional),
+site_id (integer, optional),
+line_item_id (integer, optional),
+catalog_item_modifier_id (integer, optional),
+name (string, optional),
+price (number, optional),
+quantity (number, optional),
+notes (string, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the line item	path	integer
+
+GET /line_items get list of line items
+Response Class
+ModelModel Schema
+LineItem {
+id (integer, optional),
+order_id (integer, optional),
+site_id (Object, optional),
+item_id (Object, optional),
+price (number, optional),
+quantity (number, optional),
+number (string, optional),
+name (string, optional),
+tax_reason (string, optional),
+subtotal (number, optional),
+notes (string, optional),
+sent_to_kitchen (Object, optional),
+price_override (number, optional),
+unit_type (string, optional),
+course (string, optional),
+seat_position (Object, optional),
+merchandise_type (MerchandiseType, optional),
+discounts (array[Discount], optional),
+line_item_modifiers (array[LineItemModifier], optional),
+_taxable (Object, optional)
+}
+MerchandiseType {
+id (integer, optional)
+}
+Discount {
+id (integer, optional),
+order_id (integer, optional),
+line_item_id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+amount (number, optional),
+percentage (number, optional)
+}
+LineItemModifier {
+id (integer, optional),
+site_id (integer, optional),
+line_item_id (integer, optional),
+catalog_item_modifier_id (integer, optional),
+name (string, optional),
+price (number, optional),
+quantity (number, optional),
+notes (string, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the site	query	integer
+order_id		ID of the order	query	integer
+number		number of the line item	query	string
+start		order's serve_time start	query	string
+end		order's serve_time end	query	string
+deleted		get deleted line items	query	boolean
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+orders
+An Order groups together all the parts of a customer's experience. Orders includes the customer's Line items, Modifiers, Discounts, Payments and other details.
+Show/Hide List Operations Expand Operations Raw
+DELETE /orders/{id} Deletes an order.
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the site	path	integer
+macAddress		mac address of presenter	query	string
+version		version of order data	query	integer
+
+GET /orders/{id} Return details about an order.
+Response Class
+ModelModel Schema
+Order {
+id (integer, optional),
+number (string, optional),
+serve_time (string, optional),
+site_id (integer, optional),
+user_id (integer, optional),
+table_id (integer, optional),
+order_type (string, optional) = ['tender' or 'purchase' or 'pettyCash' or 'openTab' or 'tableService'],
+numGuests (integer, optional),
+open (boolean, optional),
+totals (OrderTotals, optional),
+taxes (array[TaxRate], optional),
+discounts (array[Discount], optional),
+line_items (array[LineItem], optional),
+line_item_modifiers (array[LineItemModifier], optional),
+user (User, optional),
+customer_info (Customer, optional),
+payments (array[Payment], optional),
+transactions (array[Transaction], optional),
+table (Table, optional),
+lockedBy (string, optional),
+version (integer, optional)
+}
+OrderTotals {
+orders (number, optional),
+food (number, optional),
+tax (number, optional),
+bar (number, optional),
+tip (number, optional)
+}
+TaxRate {
+name (string, optional),
+rate (number, optional)
+}
+Discount {
+id (integer, optional),
+order_id (integer, optional),
+line_item_id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+amount (number, optional),
+percentage (number, optional)
+}
+LineItem {
+id (integer, optional),
+order_id (integer, optional),
+site_id (Object, optional),
+item_id (Object, optional),
+price (number, optional),
+quantity (number, optional),
+number (string, optional),
+name (string, optional),
+tax_reason (string, optional),
+subtotal (number, optional),
+notes (string, optional),
+sent_to_kitchen (Object, optional),
+price_override (number, optional),
+unit_type (string, optional),
+course (string, optional),
+seat_position (Object, optional),
+merchandise_type (MerchandiseType, optional),
+discounts (array[Discount], optional),
+line_item_modifiers (array[LineItemModifier], optional),
+_taxable (Object, optional)
+}
+MerchandiseType {
+id (integer, optional)
+}
+LineItemModifier {
+id (integer, optional),
+site_id (integer, optional),
+line_item_id (integer, optional),
+catalog_item_modifier_id (integer, optional),
+name (string, optional),
+price (number, optional),
+quantity (number, optional),
+notes (string, optional)
+}
+User {
+id (integer, optional),
+user_type (List[Value], optional),
+site_id (integer, optional),
+user_name (string, optional),
+first (string, optional),
+last (string, optional),
+email (string, optional),
+active (Object, optional),
+hire_date (string, optional),
+confirmed (string, optional),
+phone (string, optional),
+partners (array[Partner], optional)
+}
+Partner {
+id (integer, optional),
+name (string, optional),
+website (string, optional),
+owner_user_id (integer, optional)
+}
+Customer {
+id (integer, optional),
+first_name (string, optional),
+last_name (string, optional),
+phone (string, optional),
+notes (string, optional),
+address (string, optional),
+address2 (string, optional),
+city (string, optional),
+postal_code (string, optional),
+state (string, optional),
+email (string, optional),
+site_id (integer, optional)
+}
+Payment {
+id (integer, optional),
+site_id (integer, optional),
+order_id (integer, optional),
+when (string, optional),
+total_cash (number, optional),
+total_credit_card (number, optional),
+total_tip (number, optional),
+total_cash_tip (number, optional),
+subtotal (number, optional),
+total_tax (number, optional),
+grand_total (number, optional),
+voided (boolean, optional),
+processed (boolean, optional),
+leaf_payment_id (string, optional),
+payment_type (PaymentType, optional),
+user (User, optional),
+customer (PayCustomer, optional),
+transactions (array[Transaction], optional)
+}
+PaymentType {
+id (integer, optional),
+name (string, optional),
+desc (string, optional),
+type_num (integer, optional),
+display_on_presenter (boolean, optional)
+}
+PayCustomer {
+id (integer, optional),
+firstName (string, optional),
+lastName (string, optional),
+addressId (integer, optional)
+}
+Transaction {
+id (integer, optional),
+code (string, optional),
+payment_id (string, optional),
+created (string, optional),
+card_type (string, optional),
+last_four (string, optional),
+merchant_id (string, optional),
+terminal_id (string, optional),
+voided (boolean, optional),
+processed (boolean, optional),
+customer_name (string, optional),
+site_id (integer, optional)
+}
+Table {
+id (integer, optional),
+name (string, optional),
+site_id (integer, optional),
+seats (integer, optional),
+in_use (boolean, optional),
+active (boolean, optional),
+deleted (boolean, optional),
+available (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the order	path	integer
+
+PATCH /orders/{id} Update an order
+Response Class
+ModelModel Schema
+PatchOrderRequest {
+user_id (integer, optional),
+line_items (array[LineItemPatch], optional),
+discount (DiscountPatch, optional),
+deleted_line_items (array[LineItemPatch], optional),
+requesting_mac_address (string, optional),
+closed (Object, optional)
+}
+LineItemPatch {
+number (string, optional),
+catalog_item_id (integer, optional),
+quantity (number, optional),
+notes (string, optional),
+sent_to_kitchen (Object, optional),
+price_override (number, optional),
+tax_reason (string, optional),
+user_id (integer, optional),
+discount (DiscountPatch, optional),
+line_item_modifiers (array[LineItemModifierPatch], optional),
+deleted (boolean, optional),
+dirty (boolean, optional),
+course (string, optional),
+_taxable (Object, optional)
+}
+DiscountPatch {
+order_id (integer, optional),
+line_item_id (integer, optional),
+name (string, optional),
+amount (number, optional),
+percentage (number, optional),
+description (string, optional),
+user_id (integer, optional),
+discount_type_id (integer, optional)
+}
+LineItemModifierPatch {
+line_item_id (integer, optional),
+catalog_item_modifier_id (integer, optional),
+quantity (number, optional),
+notes (string, optional),
+deleted (boolean, optional),
+dirty (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+body	
+Parameter content type: 
+PatchOrderRequest	body	
+ModelModel Schema
+PatchOrderRequest {
+user_id (integer, optional),
+line_items (array[LineItemPatch], optional),
+discount (DiscountPatch, optional),
+deleted_line_items (array[LineItemPatch], optional),
+requesting_mac_address (string, optional),
+closed (Object, optional)
+}
+LineItemPatch {
+number (string, optional),
+catalog_item_id (integer, optional),
+quantity (number, optional),
+notes (string, optional),
+sent_to_kitchen (Object, optional),
+price_override (number, optional),
+tax_reason (string, optional),
+user_id (integer, optional),
+discount (DiscountPatch, optional),
+line_item_modifiers (array[LineItemModifierPatch], optional),
+deleted (boolean, optional),
+dirty (boolean, optional),
+course (string, optional),
+_taxable (Object, optional)
+}
+DiscountPatch {
+order_id (integer, optional),
+line_item_id (integer, optional),
+name (string, optional),
+amount (number, optional),
+percentage (number, optional),
+description (string, optional),
+user_id (integer, optional),
+discount_type_id (integer, optional)
+}
+LineItemModifierPatch {
+line_item_id (integer, optional),
+catalog_item_modifier_id (integer, optional),
+quantity (number, optional),
+notes (string, optional),
+deleted (boolean, optional),
+dirty (boolean, optional)
+}
+id			path	integer
+version			query	integer
+
+POST /orders Create a new order
+Response Class
+ModelModel Schema
+CreateOrderRequest {
+site_id (integer, optional),
+user_id (integer, optional),
+order_type (string, optional) = ['tender' or 'purchase' or 'pettyCash' or 'openTab' or 'tableService'],
+table_id (integer, optional),
+serve_time (string, optional),
+num_guests (integer, optional),
+tab_name (string, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+body	
+Parameter content type: 
+CreateOrderRequest	body	
+ModelModel Schema
+CreateOrderRequest {
+site_id (integer, optional),
+user_id (integer, optional),
+order_type (string, optional) = ['tender' or 'purchase' or 'pettyCash' or 'openTab' or 'tableService'],
+table_id (integer, optional),
+serve_time (string, optional),
+num_guests (integer, optional),
+tab_name (string, optional)
+}
+
+GET /orders Search for order by site ID and date range. Returns a list of orders.
+Response Class
+ModelModel Schema
+Order {
+id (integer, optional),
+number (integer, optional),
+serve_time (string, optional),
+site_id (integer, optional),
+user_id (integer, optional),
+table_id (integer, optional),
+order_type (string, optional) = ['tender' or 'purchase' or 'pettyCash' or 'openTab' or 'tableService'],
+numGuests (integer, optional),
+open (boolean, optional),
+totals (OrderTotals, optional),
+taxes (array[TaxRate], optional),
+discounts (array[Discount], optional),
+line_items (array[LineItem], optional),
+line_item_modifiers (array[LineItemModifier], optional),
+user (User, optional),
+customer_info (Customer, optional),
+payments (array[Payment], optional),
+transactions (array[Transaction], optional),
+table (Table, optional),
+lockedBy (string, optional),
+version (integer, optional)
+}
+OrderTotals {
+orders (number, optional),
+food (number, optional),
+tax (number, optional),
+bar (number, optional),
+tip (number, optional)
+}
+TaxRate {
+name (string, optional),
+rate (number, optional)
+}
+Discount {
+id (integer, optional),
+order_id (integer, optional),
+line_item_id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+amount (number, optional),
+percentage (number, optional)
+}
+LineItem {
+id (integer, optional),
+order_id (integer, optional),
+site_id (Object, optional),
+item_id (Object, optional),
+price (number, optional),
+quantity (number, optional),
+number (string, optional),
+name (string, optional),
+tax_reason (string, optional),
+subtotal (number, optional),
+notes (string, optional),
+sent_to_kitchen (Object, optional),
+price_override (number, optional),
+unit_type (string, optional),
+course (string, optional),
+seat_position (Object, optional),
+merchandise_type (MerchandiseType, optional),
+discounts (array[Discount], optional),
+line_item_modifiers (array[LineItemModifier], optional),
+_taxable (Object, optional)
+}
+MerchandiseType {
+id (integer, optional)
+}
+LineItemModifier {
+id (integer, optional),
+site_id (integer, optional),
+line_item_id (integer, optional),
+catalog_item_modifier_id (integer, optional),
+name (string, optional),
+price (number, optional),
+quantity (number, optional),
+notes (string, optional)
+}
+User {
+id (integer, optional),
+user_type (List[Value], optional),
+site_id (integer, optional),
+user_name (string, optional),
+first (string, optional),
+last (string, optional),
+email (string, optional),
+active (Object, optional),
+hire_date (string, optional),
+confirmed (string, optional),
+phone (string, optional),
+partners (array[Partner], optional)
+}
+Partner {
+id (integer, optional),
+name (string, optional),
+website (string, optional),
+owner_user_id (integer, optional)
+}
+Customer {
+id (integer, optional),
+first_name (string, optional),
+last_name (string, optional),
+phone (string, optional),
+notes (string, optional),
+address (string, optional),
+address2 (string, optional),
+city (string, optional),
+postal_code (string, optional),
+state (string, optional),
+email (string, optional),
+site_id (integer, optional)
+}
+Payment {
+id (integer, optional),
+site_id (integer, optional),
+order_id (integer, optional),
+when (string, optional),
+total_cash (number, optional),
+total_credit_card (number, optional),
+total_tip (number, optional),
+total_cash_tip (number, optional),
+subtotal (number, optional),
+total_tax (number, optional),
+grand_total (number, optional),
+voided (boolean, optional),
+processed (boolean, optional),
+leaf_payment_id (string, optional),
+payment_type (PaymentType, optional),
+user (User, optional),
+customer (PayCustomer, optional),
+transactions (array[Transaction], optional)
+}
+PaymentType {
+id (integer, optional),
+name (string, optional),
+desc (string, optional),
+type_num (integer, optional),
+display_on_presenter (boolean, optional)
+}
+PayCustomer {
+id (integer, optional),
+firstName (string, optional),
+lastName (string, optional),
+addressId (integer, optional)
+}
+Transaction {
+id (integer, optional),
+code (string, optional),
+payment_id (string, optional),
+created (string, optional),
+card_type (string, optional),
+last_four (string, optional),
+merchant_id (string, optional),
+terminal_id (string, optional),
+voided (boolean, optional),
+processed (boolean, optional),
+customer_name (string, optional),
+site_id (integer, optional)
+}
+Table {
+id (integer, optional),
+name (string, optional),
+site_id (integer, optional),
+seats (integer, optional),
+in_use (boolean, optional),
+active (boolean, optional),
+deleted (boolean, optional),
+available (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the site	query	integer
+start		server_time start	query	string
+end		server_time end	query	string
+open		order active or not	query	boolean
+order_number		order number	query	string
+modification_start		modification_date start	query	string
+modification_end		modification_date end	query	string
+version		data version of the order	query	integer
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+payment_apps
+A Payment App allows a merchant to take a form of payment.
+Show/Hide List Operations Expand Operations Raw
+GET /payment_apps/{id} Return the details of a payment_app
+Response Class
+ModelModel Schema
+PaymentApp {
+id (integer, optional),
+name (string, optional),
+address (string, optional),
+company_name (string, optional),
+contact_name (string, optional),
+description (string, optional),
+email (string, optional),
+active (boolean, optional),
+billable (boolean, optional),
+logo_url (string, optional),
+phone (string, optional),
+short_description (string, optional),
+url (string, optional),
+provider_id (integer, optional),
+pay_type_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the payment_app	path	integer
+
+payment_types
+A Payment Type is a form of tender accepted by a Leaf merchant.
+Show/Hide List Operations Expand Operations Raw
+GET /payment_types/{id} Return the details of a paymentType
+Response Class
+ModelModel Schema
+PaymentType {
+id (integer, optional),
+name (string, optional),
+desc (string, optional),
+type_num (integer, optional),
+display_on_presenter (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the paymentType	path	integer
+
+payments
+A Payment is a paid transaction between a Leaf merchant and a customer.
+Show/Hide List Operations Expand Operations Raw
+GET /payments/{id} get payment by id
+Response Class
+ModelModel Schema
+Payment {
+id (integer, optional),
+site_id (integer, optional),
+order_id (integer, optional),
+when (string, optional),
+total_cash (number, optional),
+total_credit_card (number, optional),
+total_tip (number, optional),
+total_cash_tip (number, optional),
+subtotal (number, optional),
+total_tax (number, optional),
+grand_total (number, optional),
+voided (boolean, optional),
+processed (boolean, optional),
+leaf_payment_id (string, optional),
+payment_type (PaymentType, optional),
+user (User, optional),
+customer (PayCustomer, optional),
+transactions (array[Transaction], optional)
+}
+PaymentType {
+id (integer, optional),
+name (string, optional),
+desc (string, optional),
+type_num (integer, optional),
+display_on_presenter (boolean, optional)
+}
+User {
+id (integer, optional),
+user_type (List[Value], optional),
+site_id (integer, optional),
+user_name (string, optional),
+first (string, optional),
+last (string, optional),
+email (string, optional),
+active (Object, optional),
+hire_date (string, optional),
+confirmed (string, optional),
+phone (string, optional),
+partners (array[Partner], optional)
+}
+Partner {
+id (integer, optional),
+name (string, optional),
+website (string, optional),
+owner_user_id (integer, optional)
+}
+PayCustomer {
+id (integer, optional),
+firstName (string, optional),
+lastName (string, optional),
+addressId (integer, optional)
+}
+Transaction {
+id (integer, optional),
+code (string, optional),
+payment_id (string, optional),
+created (string, optional),
+card_type (string, optional),
+last_four (string, optional),
+merchant_id (string, optional),
+terminal_id (string, optional),
+voided (boolean, optional),
+processed (boolean, optional),
+customer_name (string, optional),
+site_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the payment	path	integer
+
+GET /payments search for payments
+Response Class
+ModelModel Schema
+Payment {
+id (integer, optional),
+site_id (integer, optional),
+order_id (integer, optional),
+when (string, optional),
+total_cash (number, optional),
+total_credit_card (number, optional),
+total_tip (number, optional),
+total_cash_tip (number, optional),
+subtotal (number, optional),
+total_tax (number, optional),
+grand_total (number, optional),
+voided (boolean, optional),
+processed (boolean, optional),
+leaf_payment_id (string, optional),
+payment_type (PaymentType, optional),
+user (User, optional),
+customer (PayCustomer, optional),
+transactions (array[Transaction], optional)
+}
+PaymentType {
+id (integer, optional),
+name (string, optional),
+desc (string, optional),
+type_num (integer, optional),
+display_on_presenter (boolean, optional)
+}
+User {
+id (integer, optional),
+user_type (List[Value], optional),
+site_id (integer, optional),
+user_name (string, optional),
+first (string, optional),
+last (string, optional),
+email (string, optional),
+active (Object, optional),
+hire_date (string, optional),
+confirmed (string, optional),
+phone (string, optional),
+partners (array[Partner], optional)
+}
+Partner {
+id (integer, optional),
+name (string, optional),
+website (string, optional),
+owner_user_id (integer, optional)
+}
+PayCustomer {
+id (integer, optional),
+firstName (string, optional),
+lastName (string, optional),
+addressId (integer, optional)
+}
+Transaction {
+id (integer, optional),
+code (string, optional),
+payment_id (string, optional),
+created (string, optional),
+card_type (string, optional),
+last_four (string, optional),
+merchant_id (string, optional),
+terminal_id (string, optional),
+voided (boolean, optional),
+processed (boolean, optional),
+customer_name (string, optional),
+site_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the site	query	integer
+order_id		ID of the order	query	integer
+start		whenPaid start	query	string
+end		whenPaid end	query	string
+processed		if transaction processed or not	query	boolean
+voided		if transaction voided or not	query	boolean
+pay_id		payment id	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+printers
+This API serves restaurant printers.
+Show/Hide List Operations Expand Operations Raw
+POST /printers Create a new printer
+Implementation Notes
+Please discard 'Response Class', instead newly created printer returned with an id.
+Response Class
+ModelModel Schema
+PostPrinterRequest {
+site_id (integer),
+name (string),
+description (string, optional),
+ip (string),
+purpose (integer),
+printer_type (integer),
+_active (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+body	
+Parameter content type: 
+PostPrinterRequest	body	
+ModelModel Schema
+PostPrinterRequest {
+site_id (integer),
+name (string),
+description (string, optional),
+ip (string),
+purpose (integer),
+printer_type (integer),
+_active (boolean, optional)
+}
+
+GET /printers Search and return list of printers with some details
+Response Class
+ModelModel Schema
+Printer {
+id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+description (string, optional),
+ip (string, optional),
+purpose (integer, optional),
+_active (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the printer's site	query	integer
+is_active		printer active or not	query	boolean
+name		name of the printer	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+PATCH /printers/{id} Update a printer
+Response Class
+ModelModel Schema
+Printer {
+id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+description (string, optional),
+ip (string, optional),
+purpose (integer, optional),
+_active (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		id of printer	path	integer
+body		request body as json	body	PatchPrinterRequest
+
+DELETE /printers/{id} Delete printer with the given id
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the printer	path	integer
+
+GET /printers/{id} Get printer details for given id
+Response Class
+ModelModel Schema
+Printer {
+id (integer, optional),
+site_id (integer, optional),
+name (string, optional),
+description (string, optional),
+ip (string, optional),
+purpose (integer, optional),
+_active (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the printer	path	integer
+
+providers
+Providers are payment processors that provide Payment Apps.
+Show/Hide List Operations Expand Operations Raw
+GET /providers/{id} Returns details about a provider.
+Response Class
+ModelModel Schema
+Provider {
+id (integer, optional),
+name (string, optional),
+contact_name (string, optional),
+phone (string, optional),
+email (string, optional),
+url (string, optional),
+hours (string, optional),
+messages (array[Messages], optional),
+payment_types (array[PaymentType], optional)
+}
+Messages {
+message1 (string, optional),
+message2 (string, optional),
+message3 (string, optional),
+message4 (string, optional)
+}
+PaymentType {
+id (integer, optional),
+name (string, optional),
+desc (string, optional),
+type_num (integer, optional),
+display_on_presenter (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the provider	path	integer
+
+GET /providers Search for the providers by name and contact name. Returns a list of providers.
+Response Class
+ModelModel Schema
+Provider {
+id (integer, optional),
+name (string, optional),
+contact_name (string, optional),
+phone (string, optional),
+email (string, optional),
+url (string, optional),
+hours (string, optional),
+messages (array[Messages], optional),
+payment_types (array[PaymentType], optional)
+}
+Messages {
+message1 (string, optional),
+message2 (string, optional),
+message3 (string, optional),
+message4 (string, optional)
+}
+PaymentType {
+id (integer, optional),
+name (string, optional),
+desc (string, optional),
+type_num (integer, optional),
+display_on_presenter (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+name		name of the provider	query	string
+contact_name		contact name for the provider	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+report_columns
+Report Columns are the desired output fields of a report's SQL query result.
+Show/Hide List Operations Expand Operations Raw
+GET /report_columns/{id} Return the output columns of a report
+Response Class
+ModelModel Schema
+ReportColumn {
+id (integer, optional),
+report_id (integer, optional),
+name (string, optional),
+type_id (integer, optional),
+position (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the report columns	path	integer
+
+GET /report_columns Search for report columns by report ID. Returns a list of report columns rows.
+Response Class
+ModelModel Schema
+ReportColumn {
+id (integer, optional),
+report_id (integer, optional),
+name (string, optional),
+type_id (integer, optional),
+position (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+report_id		Report ID of the Report Column	query	integer
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+report_data_types
+Matches report type IDs to report data types.
+Show/Hide List Operations Expand Operations Raw
+GET /report_data_types/{id} Return the details of a report data type
+Response Class
+ModelModel Schema
+ReportDataType {
+id (integer, optional),
+data_type (string, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the reportDataType	path	integer
+
+report_parameters
+Report Parameters make up the parameter input to a report's SQL query.
+Show/Hide List Operations Expand Operations Raw
+GET /report_parameters/{id} Return the input parameters of a report
+Response Class
+ModelModel Schema
+ReportParameter {
+id (integer, optional),
+report_id (integer, optional),
+name (string, optional),
+type_id (integer, optional),
+position (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the report parameters	path	integer
+
+GET /report_parameters Search for report parameters by report ID. Returns a list of report parameters rows.
+Response Class
+ModelModel Schema
+ReportParameter {
+id (integer, optional),
+report_id (integer, optional),
+name (string, optional),
+type_id (integer, optional),
+position (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+report_id		Report ID of the Report Parameter	query	integer
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+reports
+Reports.
+Show/Hide List Operations Expand Operations Raw
+GET /reports/{id} Return a report
+Response Class
+ModelModel Schema
+Report {
+id (integer, optional),
+name (string, optional),
+description (string, optional),
+sqlstring (string, optional),
+columns (array[ReportColumn], optional),
+parameters (array[ReportParameter], optional)
+}
+ReportColumn {
+id (integer, optional),
+report_id (integer, optional),
+name (string, optional),
+type_id (integer, optional),
+position (integer, optional)
+}
+ReportParameter {
+id (integer, optional),
+report_id (integer, optional),
+name (string, optional),
+type_id (integer, optional),
+position (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the report	path	integer
+
+GET /reports Search for reports by name. Returns a list of reports.
+Response Class
+ModelModel Schema
+Report {
+id (integer, optional),
+name (string, optional),
+description (string, optional),
+sqlstring (string, optional),
+columns (array[ReportColumn], optional),
+parameters (array[ReportParameter], optional)
+}
+ReportColumn {
+id (integer, optional),
+report_id (integer, optional),
+name (string, optional),
+type_id (integer, optional),
+position (integer, optional)
+}
+ReportParameter {
+id (integer, optional),
+report_id (integer, optional),
+name (string, optional),
+type_id (integer, optional),
+position (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+name		Name of the Report	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+sites
+A Site corresponds to a merchant account. Typically a Site ID encompasses a single geographic location with multiple Leaf Presenter devices, meaning that a multi-location businesses could have multiple site IDs.
+Show/Hide List Operations Expand Operations Raw
+GET /sites/{id} Return details about a site.
+Response Class
+ModelModel Schema
+Site {
+id (integer, optional),
+name (string, optional),
+merchant_id (string, optional),
+terminal_id (string, optional),
+tax_rates (array[TaxRate], optional),
+financial_day_offset_seconds (integer, optional),
+email (string, optional),
+phone (string, optional),
+url (string, optional),
+facebook_url (string, optional),
+facebook_page_id (string, optional),
+store_id (integer, optional),
+primary_address_id (integer, optional),
+catalog_id (integer, optional),
+vertical_id (integer, optional),
+timezone (string, optional),
+gift_card_processor (string, optional),
+read_only (boolean, optional),
+settings (Settings, optional),
+payment_apps (array[PaymentApp], optional),
+primary_address (Address, optional)
+}
+TaxRate {
+name (string, optional),
+rate (number, optional)
+}
+Settings {
+petty_cash (boolean, optional),
+signature_limit (number, optional),
+traditional_checkout (boolean, optional),
+timesheets (boolean, optional),
+show_cash_credit (boolean, optional),
+show_specials (boolean, optional),
+prompt_new_order_details (boolean, optional),
+prompt_new_order_tab (boolean, optional),
+transferTicket (boolean, optional),
+transferItem (boolean, optional),
+order (OrderSettings, optional),
+tip (TipSettings, optional),
+catalog (CatalogSettings, optional)
+}
+OrderSettings {
+take_out (boolean, optional),
+delivery (boolean, optional),
+courses (boolean, optional),
+open_tabs (boolean, optional)
+}
+TipSettings {
+suggested (array[SuggestedTip], optional),
+smart_tips (boolean, optional),
+ask_for_tips (boolean, optional)
+}
+SuggestedTip {
+tip (number, optional),
+asPct (boolean, optional)
+}
+CatalogSettings {
+barcode (boolean, optional),
+inventory (boolean, optional)
+}
+PaymentApp {
+id (integer, optional),
+name (string, optional),
+address (string, optional),
+company_name (string, optional),
+contact_name (string, optional),
+description (string, optional),
+email (string, optional),
+active (boolean, optional),
+billable (boolean, optional),
+logo_url (string, optional),
+phone (string, optional),
+short_description (string, optional),
+url (string, optional),
+provider_id (integer, optional),
+pay_type_id (integer, optional)
+}
+Address {
+id (Object, optional),
+address (string, optional),
+address2 (string, optional),
+city (string, optional),
+state (string, optional),
+zip (string, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the site	path	integer
+
+GET /sites Search for sites by name or partial name. Returns a list of site IDs with site information.
+Response Class
+ModelModel Schema
+Site {
+id (integer, optional),
+name (string, optional),
+merchant_id (string, optional),
+terminal_id (string, optional),
+tax_rates (array[TaxRate], optional),
+financial_day_offset_seconds (integer, optional),
+email (string, optional),
+phone (string, optional),
+url (string, optional),
+facebook_url (string, optional),
+facebook_page_id (string, optional),
+store_id (integer, optional),
+primary_address_id (integer, optional),
+catalog_id (integer, optional),
+vertical_id (integer, optional),
+timezone (string, optional),
+gift_card_processor (string, optional),
+read_only (boolean, optional),
+settings (Settings, optional),
+payment_apps (array[PaymentApp], optional),
+primary_address (Address, optional)
+}
+TaxRate {
+name (string, optional),
+rate (number, optional)
+}
+Settings {
+petty_cash (boolean, optional),
+signature_limit (number, optional),
+traditional_checkout (boolean, optional),
+timesheets (boolean, optional),
+show_cash_credit (boolean, optional),
+show_specials (boolean, optional),
+prompt_new_order_details (boolean, optional),
+prompt_new_order_tab (boolean, optional),
+transferTicket (boolean, optional),
+transferItem (boolean, optional),
+order (OrderSettings, optional),
+tip (TipSettings, optional),
+catalog (CatalogSettings, optional)
+}
+OrderSettings {
+take_out (boolean, optional),
+delivery (boolean, optional),
+courses (boolean, optional),
+open_tabs (boolean, optional)
+}
+TipSettings {
+suggested (array[SuggestedTip], optional),
+smart_tips (boolean, optional),
+ask_for_tips (boolean, optional)
+}
+SuggestedTip {
+tip (number, optional),
+asPct (boolean, optional)
+}
+CatalogSettings {
+barcode (boolean, optional),
+inventory (boolean, optional)
+}
+PaymentApp {
+id (integer, optional),
+name (string, optional),
+address (string, optional),
+company_name (string, optional),
+contact_name (string, optional),
+description (string, optional),
+email (string, optional),
+active (boolean, optional),
+billable (boolean, optional),
+logo_url (string, optional),
+phone (string, optional),
+short_description (string, optional),
+url (string, optional),
+provider_id (integer, optional),
+pay_type_id (integer, optional)
+}
+Address {
+id (Object, optional),
+address (string, optional),
+address2 (string, optional),
+city (string, optional),
+state (string, optional),
+zip (string, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+name		partial name of the site	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+tables
+This API serves restaurant tables.
+Show/Hide List Operations Expand Operations Raw
+GET /tables/{id} Get table details for given id
+Response Class
+ModelModel Schema
+Table {
+id (integer, optional),
+name (string, optional),
+site_id (integer, optional),
+seats (integer, optional),
+in_use (boolean, optional),
+active (boolean, optional),
+deleted (boolean, optional),
+available (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the table	path	integer
+
+GET /tables Search and return list of tables with some details
+Response Class
+ModelModel Schema
+Table {
+id (integer, optional),
+name (string, optional),
+site_id (integer, optional),
+seats (integer, optional),
+in_use (boolean, optional),
+active (boolean, optional),
+deleted (boolean, optional),
+available (boolean, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the table's site	query	integer
+name		Name of the table	query	string
+active		table active or not	query	boolean
+in_use		table in use or not	query	boolean
+deleted		table deleted or not	query	boolean
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+timesheets
+Timesheets represent a single clock-in/clock-out pair for a User.
+Show/Hide List Operations Expand Operations Raw
+GET /timesheets/{id} Return timesheet details.
+Response Class
+ModelModel Schema
+Timesheet {
+id (integer, optional),
+clock_in (string, optional),
+clock_out (string, optional),
+status (string, optional) = ['Clocked in' or ' Clocked out'],
+user_id (integer, optional),
+site_id (integer, optional),
+jobcode_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the Timesheet	path	integer
+
+GET /timesheets Search for timesheets by user ID, site ID, job code ID, or clock time. Returns timesheet details.
+Response Class
+ModelModel Schema
+Timesheet {
+id (integer, optional),
+clock_in (string, optional),
+clock_out (string, optional),
+status (string, optional) = ['Clocked in' or ' Clocked out'],
+user_id (integer, optional),
+site_id (integer, optional),
+jobcode_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+site_id		ID of the site	query	integer
+user_id		ID of the user	query	integer
+jobcode_id		ID of the jobcode	query	integer
+clock_in_start		clock in date start	query	string
+clock_in_end		clock in date end	query	string
+clock_out_start		clock out date start	query	string
+clock_out_end		clock out date end	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+users
+A User is an employee at a Leaf Site.
+Show/Hide List Operations Expand Operations Raw
+GET /users/{id} Returns details about a user.
+Response Class
+ModelModel Schema
+User {
+id (integer, optional),
+user_type (List[Value], optional),
+site_id (integer, optional),
+user_name (string, optional),
+first (string, optional),
+last (string, optional),
+email (string, optional),
+active (Object, optional),
+hire_date (string, optional),
+confirmed (string, optional),
+phone (string, optional),
+partners (array[Partner], optional)
+}
+Partner {
+id (integer, optional),
+name (string, optional),
+website (string, optional),
+owner_user_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+id		ID of the user	path	integer
+
+GET /users Search for users by name, site, and date range. Returns a list of users with user information.
+Response Class
+ModelModel Schema
+User {
+id (integer, optional),
+user_type (List[Value], optional),
+site_id (integer, optional),
+user_name (string, optional),
+first (string, optional),
+last (string, optional),
+email (string, optional),
+active (Object, optional),
+hire_date (string, optional),
+confirmed (string, optional),
+phone (string, optional),
+partners (array[Partner], optional)
+}
+Partner {
+id (integer, optional),
+name (string, optional),
+website (string, optional),
+owner_user_id (integer, optional)
+}
+
+Response Content Type 
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+user_name		partial name of the user	query	string
+site_id		ID of the site	query	integer
+active		is user an active user	query	boolean
+start		start date of user's hire	query	string
+end		end date of user's hire	query	string
+page		page number	query	integer
+per_page		number of results per page	query	integer
+
+

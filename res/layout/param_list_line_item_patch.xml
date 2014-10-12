@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="number"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label1"
+        android:layout_toRightOf="@id/label1"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="number" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label1"
+        android:text="catalog_item_id"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label2"
+        android:layout_toRightOf="@id/label2"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="catalog_item_id" />
+
+    <TextView
+        android:id="@+id/label3"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label2"
+        android:text="quantity"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label3"
+        android:layout_toRightOf="@id/label3"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true" 
+        android:tag="quantity"/>
+
+    <TextView
+        android:id="@+id/label4"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label3"
+        android:text="notes"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label4"
+        android:layout_toRightOf="@id/label4"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="notes" />
+
+    <TextView
+        android:id="@+id/label5"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label4"
+        android:text="sent_to_kitchen"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label5"
+        android:layout_toRightOf="@id/label5"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="sent_to_kitchen" />
+
+    <TextView
+        android:id="@+id/label6"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label5"
+        android:text="price_override"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label6"
+        android:layout_toRightOf="@id/label6"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true" 
+        android:tag="price_override"/>
+
+    <TextView
+        android:id="@+id/label7"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label6"
+        android:text="tax_reason"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label7"
+        android:layout_toRightOf="@id/label7"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="tax_reason" />
+
+    <TextView
+        android:id="@+id/label8"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label7"
+        android:text="user_id"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label8"
+        android:layout_toRightOf="@id/label8"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true" 
+        android:tag="user_id"/>
+
+    <TextView
+        android:id="@+id/label9"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label8"
+        android:text="discount"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label9"
+        android:layout_toRightOf="@id/label9"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="discount" />
+
+    <TextView
+        android:id="@+id/label10"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label9"
+        android:text="line_item_modifiers"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label10"
+        android:layout_toRightOf="@id/label10"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="line_item_modifiers" />
+
+    <TextView
+        android:id="@+id/label11"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label10"
+        android:text="deleted"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label11"
+        android:layout_toRightOf="@id/label11"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true" 
+        android:tag="deleted"/>
+
+    <TextView
+        android:id="@+id/label12"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label11"
+        android:text="dirty"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label12"
+        android:layout_toRightOf="@id/label12"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="dirty" />
+
+    <TextView
+        android:id="@+id/label13"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label12"
+        android:text="course"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label13"
+        android:layout_toRightOf="@id/label13"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="course" />
+
+    <TextView
+        android:id="@+id/label14"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_below="@id/label13"
+        android:text="_taxable"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:layout_width="@dimen/entry_width"
+        android:layout_height="@dimen/entry_height"
+        android:layout_alignBaseline="@id/label14"
+        android:layout_toRightOf="@id/label14"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="_taxable" />
+
+</RelativeLayout>

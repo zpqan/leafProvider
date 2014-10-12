@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="url string"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/syncButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:ems="6"
+        android:text="Sync" >
+    </Button>
+
+    <Space
+        android:id="@+id/syncSpace"
+        android:layout_width="10dp"
+        android:layout_height="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/syncButton" >
+    </Space>
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/syncSpace"
+        android:ems="6"
+        android:text="Create" >
+    </Button>
+
+    <Space
+        android:id="@+id/listSpace"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/title_text" >
+    </Space>
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/listSpace" />
+
+</RelativeLayout>

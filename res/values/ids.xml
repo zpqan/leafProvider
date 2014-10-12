@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="catalog_category" type="id"/>
+    <item name="catalog_item" type="id"/>
+    <item name="catalog_item_modifier" type="id"/>
+    <item name="catalog" type="id"/>
+    <item name="customer" type="id"/>
+    <item name="discount" type="id"/>
+    <item name="jobcode" type="id"/>
+    <item name="line_item" type="id"/>
+    <item name="heartbeat" type="id"/>
+    <item name="line_item_modifier" type="id"/>
+    <item name="order" type="id"/>
+    <item name="payment" type="id"/>
+    <item name="payment_type" type="id"/>
+    <item name="site" type="id"/>
+    <item name="table" type="id"/>
+    <item name="timesheet" type="id"/>
+    <item name="user" type="id"/>
+    <item name="param_tag" type="id"/>
+    <item name="datatype_tag" type="id"/>
+    <item name="path_tag" type="id"/>
+    <item name="patch_order_activity" type="id"/>
+    <item name="paramset_createOrderRequest" type="id"/>
+    <item name="paramset_patchOrderRequest" type="id"/>
+    <item name="paramset_postPrinterRequest" type="id"/>
+    <item name="paramset_discountPatch" type="id"/>
+    <item name="paramset_lineItemPatch" type="id"/>
+    <item name="paramset_lineItemModifierPatch" type="id"/>
+    <item name="restCreateOrder" type="id"/>
+    <item name="restPatchOrder" type="id"/>
+    <item name="restDeleteOrder" type="id"/>
+    <item name="jsonEditDone" type="id"/>
+    <item name="createOrderRequest" type="id"/>
+    <item name="createLineItemRequest" type="id"/>
+    <item name="createLineItemModifierRequest" type="id"/>
+    <item name="postPrinterRequest" type="id"/>
+    
+</resources>

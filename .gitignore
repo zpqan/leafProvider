@@ -1,0 +1,22 @@
+
+# Mac clutter
+.DS_*
+
+# Artifact directories
+/bin
+/gen
+/dist
+/build
+
+# Android Studio config
+/*.iml
+/.idea
+/.gradle
+/local.properties
+
+# ADT config
+/.checkstyle
+/.settings
+/lint.xml
+/.metadata
+

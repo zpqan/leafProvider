@@ -1,0 +1,23 @@
+[
+  {
+    "id": 155835,
+    "line_item_id": 10542597,
+    "site_id": 789,
+    "name": "Buy 2 get one free",
+    "percentage": 100
+  },
+  {
+    "id": 155843,
+    "order_id": 6088730,
+    "site_id": 789,
+    "name": "Good mood Monday",
+    "amount": 1
+  },
+  {
+    "id": 155910,
+    "order_id": 6089132,
+    "site_id": 789,
+    "name": "Delete Discount",
+    "amount": 1
+  }
+]
