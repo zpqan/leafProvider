@@ -1,4 +1,4 @@
-package com.leaf.leafData.schema;
+package com.leaf.client.schema;
 
 public class PrinterSchema implements Schema {
 

@@ -1,15 +1,15 @@
-package com.leaf.leafData.dataModel;
+package com.leaf.leafclient.dataModel;
 
 import java.math.BigDecimal;
 
 import org.json.JSONObject;
 
-import com.leaf.leafData.provider.LeafDbHelper;
-import com.leaf.leafData.util.DataModelUtils;
+import com.leaf.client.util.DataModelUtils;
 
 public class LineItemModifier extends BaseModel {
 	private static final String CATALOG_ITEM_MODIFIER_ID = "catalog_item_modifier_id";
 	private static final String LINE_ITEM_ID = "line_item_id";
+	private static final String LINE_ITEM_UUID = "line_item_uuid";
 	private static final String NAME = "name";
 	private static final String NOTES = "notes";
 	private static final String PRICE = "price";
@@ -40,6 +40,15 @@ public class LineItemModifier extends BaseModel {
 	public void setLine_item_id(Integer line_item_id) {
 		DataModelUtils.put(jsonObject, LINE_ITEM_ID, line_item_id);
 	}
+	
+	public String getLine_item_uuid() {
+		return DataModelUtils.getStringFromJson(jsonObject, LINE_ITEM_UUID);
+	}
+
+	public void setLine_item_uuid(String line_item_uuid) {
+		DataModelUtils.put(jsonObject, LINE_ITEM_UUID, line_item_uuid);
+	}
+
 
 	public String getName() {
 		return DataModelUtils.getStringFromJson(jsonObject, NAME);

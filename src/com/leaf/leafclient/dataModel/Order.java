@@ -1,7 +1,6 @@
-package com.leaf.leafData.dataModel;
+package com.leaf.leafclient.dataModel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -11,9 +10,7 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-import com.leaf.leafData.provider.LeafDbHelper;
-import com.leaf.leafData.util.ContentProviderUtil;
-import com.leaf.leafData.util.DataModelUtils;
+import com.leaf.client.util.DataModelUtils;
 
 
 public class Order extends BaseModel {
@@ -21,7 +18,7 @@ public class Order extends BaseModel {
 	public static final String URLPATH = "/orders";
 	
 	private static final String _UUID = "uuid";
-	private static final String SYNC = "sync";
+	//private static final String SYNC = "sync";
 	private static final String NUMBER = "number";
 	private static final String SERVE_TIME = "serve_time";
 	private static final String SITE_ID = "site_id";
@@ -36,8 +33,8 @@ public class Order extends BaseModel {
 	private static final String DISCOUNT = "discount";
 	private static final String LINE_ITEMS = "line_items";
 	private static final String LINE_ITEM_MODIFIERS = "line_item_modifiers";
-	private static final String PAYMENTS = "payments";
-	private static final String TRANSACTIONS = "transactions";
+//	private static final String PAYMENTS = "payments";
+//	private static final String TRANSACTIONS = "transactions";
 	
 //	private static final String CREATEREQUEST = "create_request";
 //	private static final String PATCHREQUESTS = "patch_requests";
@@ -340,14 +337,14 @@ public class Order extends BaseModel {
 //		return order;
 //	}
 
-	private void addNonNull(JSONObject jsonObject, String name, Object value) {
-		if (value != null)
-			try {
-				jsonObject.putOpt(name, value);
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-	}
+//	private void addNonNull(JSONObject jsonObject, String name, Object value) {
+//		if (value != null)
+//			try {
+//				jsonObject.putOpt(name, value);
+//			} catch (JSONException e) {
+//				e.printStackTrace();
+//			}
+//	}
 
 	public void addLineItem(LineItem lineItem) {
 		lineItem.setOrder_id(getId());
@@ -415,14 +412,20 @@ public class Order extends BaseModel {
 		List<LineItem> list = new ArrayList<LineItem>();
 		for (LineItem lineItem : getLine_items()) {
 			if ( lineItem.isIncludedInRestCall() ){
-					list.add(lineItem);
+				list.add(lineItem);
 			}
 		}
 		setLine_items(list.toArray(new LineItem[list.size()]));
 	}
 	
 	public Order copySubItems(Order src) {
-		setLine_items(src.getLine_items());
+		Integer orderId = this.getId();
+		LineItem[] line_items = src.getLine_items();
+		for (LineItem line_item : line_items) {
+			line_item.setOrder_id(orderId);
+		}
+		setLine_items(line_items);
+		
 		setLine_item_modifiers(src.getLine_item_modifiers());
 		setDiscounts(src.getDiscounts());
 		return this;

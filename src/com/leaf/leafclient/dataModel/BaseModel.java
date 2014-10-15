@@ -1,10 +1,12 @@
-package com.leaf.leafData.dataModel;
+package com.leaf.leafclient.dataModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.leaf.client.util.DataModelUtils;
 import com.leaf.leafData.provider.LeafDbHelper;
-import com.leaf.leafData.util.DataModelUtils;
+
+
 
 public abstract class BaseModel {
 	private static final String ID = "id";

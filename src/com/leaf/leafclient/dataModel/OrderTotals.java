@@ -1,10 +1,10 @@
-package com.leaf.leafData.dataModel;
+package com.leaf.leafclient.dataModel;
 
 import java.math.BigDecimal;
 
 import org.json.JSONObject;
 
-import com.leaf.leafData.util.DataModelUtils;
+import com.leaf.client.util.DataModelUtils;
 
 public class OrderTotals {
 	private static final String ORDERS = "orders";

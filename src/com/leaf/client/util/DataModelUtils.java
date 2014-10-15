@@ -1,4 +1,4 @@
-package com.leaf.leafData.util;
+package com.leaf.client.util;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -12,9 +12,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.leaf.leafData.dataModel.BaseModel;
-import com.leaf.leafData.dataModel.LineItem;
-import com.leaf.leafData.dataModel.LineItemModifier;
+import com.leaf.leafclient.dataModel.BaseModel;
+import com.leaf.leafclient.dataModel.LineItem;
+import com.leaf.leafclient.dataModel.LineItemModifier;
 
 import android.database.Cursor;
 import android.util.Log;

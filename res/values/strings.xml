@@ -5,5 +5,18 @@
     <string name="button">Button</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Provider -->
+    <string name="leaf_authority">com.leaf.dataprovider</string>
+    <!-- Sync -->
+    <string name="account_type"
+        >com.leaf.leadData.ACCOUNT</string>
+    <string name="token_type">AUTH_UUID</string>
+    <string name="msg_no_account">Please configure an account</string> 
     
+      <!-- Prefs -->
+    <string name="activity_prefs">Settings</string>
+    <string name="prefs_sync_summary">Url for the leaf service</string>
+    <string name="prefs_sync_title">Sync prefs</string>
+    <string name="prefs_url_title">Sync URL</string>
+    <string name="prefs_url_key">Leaf.URI</string>
 </resources>

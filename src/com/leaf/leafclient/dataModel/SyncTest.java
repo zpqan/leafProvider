@@ -1,4 +1,4 @@
-package com.leaf.leafData.dataModel;
+package com.leaf.leafclient.dataModel;
 
 import java.math.BigDecimal;
 

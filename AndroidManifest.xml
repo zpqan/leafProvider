@@ -10,8 +10,20 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ 
+      <!-- Accounts -->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+
+    <!-- Account extra -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Sync -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     
     <application
+        android:name=".ClientApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -29,7 +41,30 @@
         <provider
        		android:exported="true"
             android:name=".provider.LeafProvider"
-            android:authorities="com.leaf.dataprovider" />
+            android:authorities="@string/leaf_authority" />
+        
+        <service
+            android:name=".sync.AccountService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/account" />
+        </service>
+        <service
+            android:name=".sync.SyncService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/sync" />
+        </service>        
+        
     </application>
 
 </manifest>

@@ -3,6 +3,8 @@ package com.leaf.leafData.provider;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+import com.leaf.client.util.SchemaUtil;
+
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -50,7 +52,7 @@ public class LeafProvider extends ContentProvider {
 
 	@Override
 	public int delete(Uri uri, String whereClause, String[] whereValues) {
-		Log.i(TAG, " delete uri: " + uri +  "where " + whereClause + "  " + whereValues[0]);
+		//Log.i(TAG, " delete uri: " + uri +  "where " + whereClause + "  " + whereValues[0]);
 		if (uri == null)
 			throw new IllegalArgumentException("delete called with null Uri ");
 		
@@ -73,14 +75,14 @@ public class LeafProvider extends ContentProvider {
 		if (uri == null) {
 			throw new IllegalArgumentException("called with null Uri ");	
 		}
-		String tableName = uri.getPathSegments().get(0);
+		String resourceName = getPathName(uri);
+		String tableName = SchemaUtil.getTableName(resourceName);
 		return tableName;
 	}
 	
 	private String getPathName(Uri uri) {
 		return uri.getPathSegments().get(0);
 	}
-
 
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {

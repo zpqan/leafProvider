@@ -1,4 +1,4 @@
-package com.leaf.leafData.util;
+package com.leaf.client.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,17 +6,17 @@ import java.util.Map;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-import com.leaf.leafData.dataModel.BaseModel;
-import com.leaf.leafData.dataModel.Order;
-import com.leaf.leafData.dataModel.Printer;
+import com.leaf.client.schema.OrderlSchema;
+import com.leaf.client.schema.PrinterSchema;
+import com.leaf.client.schema.Schema;
 import com.leaf.leafData.provider.LeafContract;
 import com.leaf.leafData.provider.LeafDbHelper;
-import com.leaf.leafData.schema.OrderlSchema;
-import com.leaf.leafData.schema.PrinterSchema;
-import com.leaf.leafData.schema.Schema;
+import com.leaf.leafclient.dataModel.Order;
+import com.leaf.leafclient.dataModel.Printer;
 
 
 public class SchemaUtil {
+	private static final String TABLE = "_TABLE";
 	private static final String TAG = SchemaUtil.class.getSimpleName();
 	private static Map<String, Schema> typeSchemaMap = new HashMap<String,Schema>();
 	private static Map<String, String> sqlTypeMap = new HashMap<String,String>();
@@ -34,8 +34,8 @@ public class SchemaUtil {
     	    + ");";	
 			
 	static {	
-		typeSchemaMap.put(LeafContract.Order.TABLE_NAME, new OrderlSchema());
-		typeSchemaMap.put(LeafContract.Printer.TABLE_NAME, new PrinterSchema());
+		typeSchemaMap.put(LeafContract.Order.RESOURCE_NAME, new OrderlSchema());
+		typeSchemaMap.put(LeafContract.Printer.RESOURCE_NAME, new PrinterSchema());
 		typeSchemaMap.put(Order.class.getName(), new OrderlSchema());
 		typeSchemaMap.put(Printer.class.getName(), new PrinterSchema());
 			
@@ -44,9 +44,10 @@ public class SchemaUtil {
 		sqlTypeMap.put(Schema.BOOLEAN_TYPE, "INTEGER");
 	}
 	
-	public static String getSqlCreateTable(String tableName) {
+	public static String getSqlCreateTable(String resourceName) {
+		String tableName = getTableName(resourceName);
 		String sql = "CREATE TABLE " + tableName +  sqlCommonHeader;
-		sql += getSqlForIndexFields(tableName);
+		sql += getSqlForIndexFields(resourceName);
 		sql += sqlCommonTail;
 		Log.i(TAG, " sql: " + sql);		
 		return sql;
@@ -61,8 +62,8 @@ public class SchemaUtil {
 	}
 	
 	
-	private static String getSqlForIndexFields(String tableName) {
-		Schema schema = getSchema(tableName);
+	private static String getSqlForIndexFields(String resourceName) {
+		Schema schema = getSchema(resourceName);
 		String[] indexedFieldNames = schema.getIndexedFieldNames();
 		StringBuffer strBuf = new StringBuffer();
 		for ( String fieldName : indexedFieldNames) {
@@ -83,4 +84,7 @@ public class SchemaUtil {
 		return sqlType;
 	}
 	
+	public static String getTableName(String resourceName) {
+		return resourceName + TABLE;
+	}
 }

@@ -1,4 +1,4 @@
-package com.leaf.leafData.dataModel;
+package com.leaf.leafclient.dataModel;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -8,10 +8,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.leaf.leafData.util.DataModelUtils;
+import com.leaf.client.util.DataModelUtils;
 
 
 public class LineItem extends BaseModel{
+	//private static final String _UUID = "uuid";
 	private static final String ORDER_ID = "order_id";
 	private static final String SITE_ID = "site_id";
 	private static final String CATALOG_ITEM_ID = "catalog_item_id";
@@ -32,6 +33,7 @@ public class LineItem extends BaseModel{
 	private static final String DISCOUNTS = "discounts";
 	private static final String DISCOUNT = "discount";
 	private static final String NOTES = "notes";
+	private static final String ORDER_UUID = "order_uuid";
 
 	private List<LineItemModifier> lineItemModifiers ;
 	private Discount discount;
@@ -48,6 +50,8 @@ public class LineItem extends BaseModel{
 		super(jsonObj);
 		
 	}	
+	
+
 	@Override
 	protected void init() {
 		super.init();		
@@ -116,6 +120,14 @@ public class LineItem extends BaseModel{
 
 	public void setOrder_id(Integer order_id) {
 		DataModelUtils.put(jsonObject, ORDER_ID, order_id);
+	}
+
+	public String getOrder_uuid() {
+		return DataModelUtils.getStringFromJson(jsonObject, ORDER_UUID);
+	}
+
+	public void setOrder_uuid(String uuid) {
+		DataModelUtils.put(jsonObject, ORDER_UUID, uuid);
 	}
 
 	public Integer getSite_id() {
@@ -252,7 +264,11 @@ public class LineItem extends BaseModel{
 	}
 
 	public void setLine_item_modifiers(LineItemModifier[] line_item_modifiers) {
-		JSONArray jsonArray = DataModelUtils.modelListToJsonArray(line_item_modifiers);
+		JSONArray jsonArray = new JSONArray();
+		
+		if (line_item_modifiers != null) {
+			jsonArray = DataModelUtils.modelListToJsonArray(line_item_modifiers);
+		}
 		DataModelUtils.put(jsonObject, LINE_ITEM_MODIFIERS, jsonArray);
 	}
 
@@ -325,7 +341,6 @@ public class LineItem extends BaseModel{
 		}
 		return false;
 	}
-
 
 
 //	public static LineItem fromLineItemPatch(JSONObject lineItemPatch) {

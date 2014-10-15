@@ -1,4 +1,4 @@
-package com.leaf.leafData.util;
+package com.leaf.client.util;
 
 import java.lang.reflect.Constructor;
 import java.util.List;
@@ -10,11 +10,11 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-import com.leaf.leafData.dataModel.BaseModel;
 import com.leaf.leafData.rest.Request;
 import com.leaf.leafData.rest.Response;
 import com.leaf.leafData.rest.RestClient;
 import com.leaf.leafData.rest.Request.Method;
+import com.leaf.leafclient.dataModel.BaseModel;
 
 public class SyncUtil {
 	private static final String TAG = SyncUtil.class.getSimpleName();

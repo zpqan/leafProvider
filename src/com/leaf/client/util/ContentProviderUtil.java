@@ -1,4 +1,4 @@
-package com.leaf.leafData.util;
+package com.leaf.client.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,10 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.leaf.leafData.dataModel.BaseModel;
+import com.leaf.client.schema.Schema;
 import com.leaf.leafData.provider.LeafContract;
 import com.leaf.leafData.provider.LeafDbHelper;
-import com.leaf.leafData.schema.Schema;
+import com.leaf.leafclient.dataModel.BaseModel;
 
 public class ContentProviderUtil {
 	private static final String TAG = ContentProviderUtil.class.getSimpleName();
@@ -78,14 +78,24 @@ public class ContentProviderUtil {
 	    	ContentResolver cr = ctx.getContentResolver();   
 	       	ArrayList<ContentProviderOperation> ops = new ArrayList<ContentProviderOperation>();
 	    	for ( BaseModel model : models) {
-	    		ContentValues cvs = ContentProviderUtil.modelToContentValue(model);
-	    		Builder builder = ContentProviderOperation.newUpdate(uri);
+	    		Builder builder = null;
 	    		if ( model.getSyncflag() == LeafDbHelper.CLEAN) {
+	    			builder = ContentProviderOperation.newUpdate(uri);
 	    			builder.withSelection(LeafDbHelper._LEAF_ID + "=?", new String[]{model.getId().toString()});
 	    		} else if (model.getSyncflag() == LeafDbHelper.NEW) {
+	    			builder = ContentProviderOperation.newUpdate(uri);
 	    			builder.withSelection(LeafDbHelper._UUID + "=? COLLATE NOCASE", new String[]{model.getUuid()});
+	    		} else if ( model.getSyncflag() == LeafDbHelper.DELETED) {
+	    			builder = ContentProviderOperation.newDelete(uri);
+	    			builder.withSelection(LeafDbHelper._LEAF_ID + "=?", new String[]{model.getId().toString()});
 	    		}
-	    		ops.add(builder.withValues(cvs).build());
+	    		
+	    		if (model.getSyncflag() != LeafDbHelper.DELETED ) {
+		    		ContentValues cvs = ContentProviderUtil.modelToContentValue(model);
+		    		ops.add(builder.withValues(cvs).build());
+	    		} else {
+	    			ops.add(builder.build());
+	    		}
 	    	}
 	    	try {
 	    		cr.applyBatch(LeafContract.AUTHORITY, ops);
