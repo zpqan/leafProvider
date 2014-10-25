@@ -6,8 +6,7 @@ import android.net.Uri;
 public class LeafContract {
     private  LeafContract() {}
 
-    public static final String AUTHORITY = "com.leaf.leafclient.dataprovider";
-    //public static final String AUTHORITY = "com.leaf.dataprovider";
+    public static final String AUTHORITY = "com.leaf.dataprovider";
     public static final String CONTENT_TYPE  = "vnd.android.cursor.dir/vnd.leaf.leafme";
     public static final String CONTENT_ITEM_TYPE  = "vnd.android.cursor.item/vnd.leaf.leafme";
 

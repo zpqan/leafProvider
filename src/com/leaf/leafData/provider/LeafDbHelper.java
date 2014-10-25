@@ -41,7 +41,7 @@ public class LeafDbHelper extends SQLiteOpenHelper {
     public static final String NEW_SYNC =  _SYNCFLAG + "==" + NEW;
        
     // Name of the database file
-    private static final String DATABASE_NAME = "leafclient.db";
+    private static final String DATABASE_NAME = "leafDataProvider.db";
     private static final int DATABASE_VERSION = 1;
 
     public LeafDbHelper(Context context) {
@@ -72,9 +72,8 @@ public class LeafDbHelper extends SQLiteOpenHelper {
         Log.d(TAG, "creating database tables");
         db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Order.RESOURCE_NAME));
         db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Printer.RESOURCE_NAME));
-       
-//        db.execSQL(Z2DM_CatalogItem.DB_CREATE);
-//        db.execSQL(Z2DM_CatalogItemModifier.DB_CREATE);
+        db.execSQL(getCreateTableSql(LeafContract.CatalogItem.TABLE_NAME));	
+        db.execSQL(getCreateTableSql(LeafContract.CatalogItemModifier.TABLE_NAME));	      
     }
     
     @Override
@@ -82,28 +81,27 @@ public class LeafDbHelper extends SQLiteOpenHelper {
         recreateDb(db);
     }
 
-    private void recreateTable(SQLiteDatabase db, String tableName) {
-    	if ( tableName.equals(LeafContract.Order.TABLE_NAME)) {
-    		db.execSQL(getDropTableSql(SchemaUtil.getTableName(LeafContract.Order.RESOURCE_NAME)));
-    		db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Order.RESOURCE_NAME));
-    	} else if ( tableName.equals(LeafContract.Printer.TABLE_NAME)) {
-    		db.execSQL(getDropTableSql(SchemaUtil.getTableName(LeafContract.Printer.RESOURCE_NAME)));
-    		db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Printer.RESOURCE_NAME));
-    	} else {
-    		db.execSQL(getDropTableSql(tableName));
-    		db.execSQL(getCreateTableSql(tableName));	
-    	}
-  }
-   
+//    private void recreateTable(SQLiteDatabase db, String tableName) {
+//    	if ( tableName.equals(LeafContract.Order.TABLE_NAME)) {
+//    		db.execSQL(getDropTableSql(SchemaUtil.getTableName(LeafContract.Order.RESOURCE_NAME)));
+//    		db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Order.RESOURCE_NAME));
+//    	} else if ( tableName.equals(LeafContract.Printer.TABLE_NAME)) {
+//    		db.execSQL(getDropTableSql(SchemaUtil.getTableName(LeafContract.Printer.RESOURCE_NAME)));
+//    		db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Printer.RESOURCE_NAME));
+//    	} else {
+//    		db.execSQL(getDropTableSql(tableName));
+//    		db.execSQL(getCreateTableSql(tableName));	
+//    	}
+//  }
+//   
    
     
     public void recreateDb(SQLiteDatabase db) {
         Log.d(TAG, "reset tables");
-        
-        recreateTable(db,LeafContract.Order.RESOURCE_NAME);
-        recreateTable(db,LeafContract.Printer.RESOURCE_NAME);
-        recreateTable(db,LeafContract.CatalogItem.TABLE_NAME);
-        recreateTable(db,LeafContract.CatalogItemModifier.TABLE_NAME);
+  		db.execSQL(getDropTableSql(SchemaUtil.getTableName(LeafContract.Order.RESOURCE_NAME)));
+   		db.execSQL(getDropTableSql(SchemaUtil.getTableName(LeafContract.Printer.RESOURCE_NAME)));
+		db.execSQL(getDropTableSql(LeafContract.CatalogItem.TABLE_NAME));
+		db.execSQL(getDropTableSql(LeafContract.CatalogItemModifier.TABLE_NAME));
         onCreate(db);
     }
     
