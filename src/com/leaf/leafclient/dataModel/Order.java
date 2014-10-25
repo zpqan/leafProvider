@@ -418,6 +418,39 @@ public class Order extends BaseModel {
 		setLine_items(list.toArray(new LineItem[list.size()]));
 	}
 	
+	public void addLineItemModifier(LineItemModifier modifier) {
+		Integer lineItemId = modifier.getLine_item_id();
+		LineItem lineItem = null;
+		if ( lineItemId != null) {
+			lineItem = findLineItemById(lineItemId);
+		} else {
+			lineItem = findLineItemByUuid(modifier.getUuid());
+		}
+		lineItem.addLineItemModifier(modifier);
+	}
+	
+	private LineItem findLineItemById(Integer id) {
+		if ( id != null) {
+			for (LineItem lineItem : getLine_items() ) {
+				if (id.equals(lineItem.getId())) {
+					return lineItem;
+				}
+			}
+		}
+		throw new IllegalArgumentException("can not find line item with id: " + id);
+	}
+	
+	private LineItem findLineItemByUuid(String uuid) {
+		if ( uuid != null) {
+			for (LineItem lineItem : getLine_items() ) {
+				if (uuid.equals(lineItem.getUuid())) {
+					return lineItem;
+				}
+			}
+		}
+		throw new IllegalArgumentException("can not find line item with id: " + uuid);
+	}
+	
 	public Order copySubItems(Order src) {
 		Integer orderId = this.getId();
 		LineItem[] line_items = src.getLine_items();
