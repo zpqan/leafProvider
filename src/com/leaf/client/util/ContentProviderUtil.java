@@ -16,10 +16,10 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.leaf.client.schema.Schema;
+import com.leaf.leafData.DataModel.BaseModel;
 import com.leaf.leafData.provider.LeafContract;
 import com.leaf.leafData.provider.LeafDbHelper;
-import com.leaf.leafclient.dataModel.BaseModel;
+import com.leaf.leafData.schema.Schema;
 
 public class ContentProviderUtil {
 	private static final String TAG = ContentProviderUtil.class.getSimpleName();

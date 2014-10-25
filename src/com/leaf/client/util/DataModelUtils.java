@@ -12,9 +12,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.leaf.leafclient.dataModel.BaseModel;
-import com.leaf.leafclient.dataModel.LineItem;
-import com.leaf.leafclient.dataModel.LineItemModifier;
+import com.leaf.leafData.DataModel.BaseModel;
+import com.leaf.leafData.DataModel.LineItem;
+import com.leaf.leafData.DataModel.LineItemModifier;
 
 import android.database.Cursor;
 import android.util.Log;

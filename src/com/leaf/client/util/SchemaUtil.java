@@ -6,13 +6,13 @@ import java.util.Map;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-import com.leaf.client.schema.OrderlSchema;
-import com.leaf.client.schema.PrinterSchema;
-import com.leaf.client.schema.Schema;
+import com.leaf.leafData.DataModel.Order;
+import com.leaf.leafData.DataModel.Printer;
 import com.leaf.leafData.provider.LeafContract;
 import com.leaf.leafData.provider.LeafDbHelper;
-import com.leaf.leafclient.dataModel.Order;
-import com.leaf.leafclient.dataModel.Printer;
+import com.leaf.leafData.schema.OrderlSchema;
+import com.leaf.leafData.schema.PrinterSchema;
+import com.leaf.leafData.schema.Schema;
 
 
 public class SchemaUtil {

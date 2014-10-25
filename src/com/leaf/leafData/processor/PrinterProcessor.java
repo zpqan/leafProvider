@@ -15,6 +15,8 @@ import android.util.Log;
 import com.leaf.client.util.ContentProviderUtil;
 import com.leaf.client.util.SyncUtil;
 import com.leaf.leafData.ClientApp;
+import com.leaf.leafData.DataModel.BaseModel;
+import com.leaf.leafData.DataModel.Printer;
 import com.leaf.leafData.provider.LeafContract;
 import com.leaf.leafData.provider.LeafDbHelper;
 import com.leaf.leafData.rest.LeafRest;
@@ -22,8 +24,6 @@ import com.leaf.leafData.rest.Request;
 import com.leaf.leafData.rest.Request.Method;
 import com.leaf.leafData.rest.Response;
 import com.leaf.leafData.rest.RestClient;
-import com.leaf.leafclient.dataModel.BaseModel;
-import com.leaf.leafclient.dataModel.Printer;
 
 
 public class PrinterProcessor {

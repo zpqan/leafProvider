@@ -1,4 +1,4 @@
-package com.leaf.client.schema;
+package com.leaf.leafData.schema;
 
 public interface Schema {
 	public static String STRING_TYPE ="STRING_TYPE";

@@ -1,4 +1,4 @@
-package com.leaf.leafclient.dataModel;
+package com.leaf.leafData.DataModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;

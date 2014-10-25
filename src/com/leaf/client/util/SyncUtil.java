@@ -10,11 +10,11 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+import com.leaf.leafData.DataModel.BaseModel;
 import com.leaf.leafData.rest.Request;
 import com.leaf.leafData.rest.Response;
 import com.leaf.leafData.rest.RestClient;
 import com.leaf.leafData.rest.Request.Method;
-import com.leaf.leafclient.dataModel.BaseModel;
 
 public class SyncUtil {
 	private static final String TAG = SyncUtil.class.getSimpleName();
