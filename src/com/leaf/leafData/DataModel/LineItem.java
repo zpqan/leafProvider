@@ -8,11 +8,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
 import com.leaf.client.util.DataModelUtils;
 
 
 public class LineItem extends BaseModel{
-	//private static final String _UUID = "uuid";
+	private static final String TAG = LineItem.class.getSimpleName();
 	private static final String ORDER_ID = "order_id";
 	private static final String SITE_ID = "site_id";
 	private static final String CATALOG_ITEM_ID = "catalog_item_id";
@@ -51,6 +52,18 @@ public class LineItem extends BaseModel{
 		
 	}	
 	
+//	public LineItem(LineItemPatch lineItemPatch) {
+//		super(lineItemPatch.json);
+//		init();
+//		
+//		JSONObject patch = lineItemPatch.json;
+//		this.jsonObject = patch;
+//		
+//		setCatalog_item_id(patch.optInt(CATALOG_ITEM_ID));
+//		this.setUuid(patch.optString(_UUID));
+//		this.setDirty(false);
+//		this.setDeleted(false);
+//	}
 
 	@Override
 	protected void init() {
@@ -59,7 +72,7 @@ public class LineItem extends BaseModel{
 			if (!jsonObject.has(LINE_ITEM_MODIFIERS))  jsonObject.put(LINE_ITEM_MODIFIERS, new JSONArray());
 			if (!jsonObject.has(DISCOUNTS))  jsonObject.put(DISCOUNTS, new JSONArray());
 		} catch (JSONException e) {
-			e.printStackTrace();
+			
 		}
 		
 		/***
@@ -68,6 +81,7 @@ public class LineItem extends BaseModel{
 		Integer itemId = getItem_id();
 		if ( itemId != null) {
 			setCatalog_item_id(itemId);
+			jsonObject.remove(ITEM_ID);
 		}
 		fixDiscount();
 		fixLineItemModify(DataModelUtils.getArrayFromJson(jsonObject, LINE_ITEM_MODIFIERS));
@@ -281,7 +295,21 @@ public class LineItem extends BaseModel{
 		this.lineItemModifiers.add(lineItemModifier);
 		JSONArray jsonArray = DataModelUtils.getArrayFromJson(jsonObject, LINE_ITEM_MODIFIERS);
 		jsonArray.put(lineItemModifier.getJsonObject());	
+		if (getId() != null) {
+			this.setDirty(true);
+		}
 	}
+	
+	public void deleteLineItemModifier(LineItemModifier lineItemModifier) {
+		if (getId() != null) {
+			this.setDirty(true);
+			lineItemModifier.setDeleted(true);
+		} else {
+			
+		}
+	}
+	
+	
 	public JSONArray getDiscounts() {
 		return DataModelUtils.getArrayFromJson(jsonObject, DISCOUNTS);
 	}
@@ -306,30 +334,36 @@ public class LineItem extends BaseModel{
 		DataModelUtils.put(jsonObject, DISCOUNT, discountJson);
 	}
 
-//	public void addLineItemModifier(LineItemModifier modifier) {
-////		modifier.setDeleted(false);
-////		modifier.setDirty(false);
-////		modifier.setId(null);
-//		this.lineItemModifiers.add(modifier);
-//		JSONArray jsonArray = DataModelUtils.getArrayFromJson(jsonObject, LINE_ITEM_MODIFIERS);
-//		jsonArray.put(modifier.getJsonObject());
-//	}
 	
 	public void trimForRestCall() {
-		if ( getId() == null) {
-			setDiscount(null);
-			setLine_item_modifiers(null);
-			return;
-		}
+		jsonObject.remove(ITEM_ID);
+		remveEmptyStringValue(NOTES);
+		remveEmptyStringValue(TAX_REASON);
+		jsonObject.remove(ORDER_UUID);
+
+		boolean hasId = getId() != null;
 		
 		List<LineItemModifier> list = new ArrayList<LineItemModifier>();
 		for (LineItemModifier modifier : getLine_item_modifiers() ) {
 			if ( modifier.isIncludedInRestCall()) {
+				modifier.trimForRestCall();
 				list.add(modifier);
+				setDirty(true);
 			}
 		}
+		if (!hasId) setDirty(false);
 		setLine_item_modifiers(list.toArray(new LineItemModifier[list.size()]));
-			
+	}
+	
+	private void remveEmptyStringValue(String name) {
+		String value;
+		try {
+			value = jsonObject.getString(name);
+			if ( value != null && value.length() == 0) {
+				jsonObject.remove(name);
+			}
+		} catch (JSONException e) {
+		}
 	}
 	
 	public boolean isIncludedInRestCall() {
@@ -342,39 +376,5 @@ public class LineItem extends BaseModel{
 		return false;
 	}
 
-
-//	public static LineItem fromLineItemPatch(JSONObject lineItemPatch) {
-//		//		LineItemPatch {
-//		//			number (string, optional),
-//		//			catalog_item_id (integer, optional),
-//		//			quantity (number, optional),
-//		//			notes (string, optional),
-//		//			sent_to_kitchen (Object, optional),
-//		//			price_override (number, optional),
-//		//			tax_reason (string, optional),
-//		//	TODO:	user_id (integer, optional),
-//		//	TODO:	discount (DiscountPatch, optional),
-//		//			line_item_modifiers (array[LineItemModifierPatch], optional),
-//		//			deleted (boolean, optional),
-//		//			dirty (boolean, optional),
-//		//			course (string, optional),
-//		//			version (Object, optional),
-//		//			uuid (string, optional),
-//		//			_taxable (Object, optional)
-//		//			}
-//		LineItem lineItem = new LineItem();
-//
-//		lineItem.setNumber(DataModelUtils.getStringFromJson(lineItemPatch, "number"));
-//		lineItem.setItem_id(DataModelUtils.getIntegerFromJson(lineItemPatch, "catalog_item_id"));
-//		lineItem.setQuantity(DataModelUtils.getBigDecimalFromJson(lineItemPatch, "quantity"));
-//		lineItem.setNotes(DataModelUtils.getStringFromJson(lineItemPatch, "notes"));
-//		lineItem.setSent_to_kitchenl(DataModelUtils.getBooleanFromJson(lineItemPatch, "sent_to_kitchen"));
-//		lineItem.setPrice_override(DataModelUtils.getBigDecimalFromJson(lineItemPatch, "price_override"));
-//		lineItem.setTax_reason(DataModelUtils.getStringFromJson(lineItemPatch, "tax_reason"));
-//		lineItem.setCourse(DataModelUtils.getStringFromJson(lineItemPatch, "course"));
-//		lineItem.setIs_taxable(DataModelUtils.getBooleanFromJson(lineItemPatch, "_taxable"));
-//		lineItem.setUuid(UUID.randomUUID().toString());
-//		return lineItem;
-//	}
-
+	
 }

@@ -1,11 +1,14 @@
 package com.leaf.leafData.provider;
 
+import com.leaf.client.util.SchemaUtil;
+
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
 import android.util.Log;
 
-import com.leaf.client.util.SchemaUtil;
 
 
 /**
@@ -38,12 +41,26 @@ public class LeafDbHelper extends SQLiteOpenHelper {
     public static final String NEW_SYNC =  _SYNCFLAG + "==" + NEW;
        
     // Name of the database file
-    private static final String DATABASE_NAME = "leafData.db";
+    private static final String DATABASE_NAME = "leafclient.db";
     private static final int DATABASE_VERSION = 1;
 
     public LeafDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    } 
+    }
+
+    private String getCreateTableSql(String tableName) {
+    	return 
+    	"CREATE TABLE " + tableName + " ("
+    	 		+ BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT "
+    	 		+ ", " + LeafDbHelper._UUID + " STRING  COLLATE NOCASE "
+        	    + ", " + LeafDbHelper._SYNCFLAG + " INTEGER "
+         	    + ", " + LeafDbHelper._VERSION + " INTEGER " 
+        	    + ", " + LeafDbHelper._MODIFICATION_TIME + " STRING "
+        	    + ", " + LeafDbHelper._LEAF_ID + " INTEGER "
+        	    + ", " + LeafDbHelper._JSON + " STRING "
+        	    + ", UNIQUE(" + LeafDbHelper._LEAF_ID + ") ON CONFLICT REPLACE "
+        	    + ");";	
+    }
 
     private String getDropTableSql(String tableName) {
     	return "DROP TABLE IF EXISTS " + tableName;
@@ -51,9 +68,13 @@ public class LeafDbHelper extends SQLiteOpenHelper {
     
     @Override
     public void onCreate(SQLiteDatabase db) {
+    	
         Log.d(TAG, "creating database tables");
         db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Order.RESOURCE_NAME));
         db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Printer.RESOURCE_NAME));
+       
+//        db.execSQL(Z2DM_CatalogItem.DB_CREATE);
+//        db.execSQL(Z2DM_CatalogItemModifier.DB_CREATE);
     }
     
     @Override
@@ -61,13 +82,30 @@ public class LeafDbHelper extends SQLiteOpenHelper {
         recreateDb(db);
     }
 
+    private void recreateTable(SQLiteDatabase db, String tableName) {
+    	if ( tableName.equals(LeafContract.Order.TABLE_NAME)) {
+    		db.execSQL(getDropTableSql(SchemaUtil.getTableName(LeafContract.Order.RESOURCE_NAME)));
+    		db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Order.RESOURCE_NAME));
+    	} else if ( tableName.equals(LeafContract.Printer.TABLE_NAME)) {
+    		db.execSQL(getDropTableSql(SchemaUtil.getTableName(LeafContract.Printer.RESOURCE_NAME)));
+    		db.execSQL(SchemaUtil.getSqlCreateTable(LeafContract.Printer.RESOURCE_NAME));
+    	} else {
+    		db.execSQL(getDropTableSql(tableName));
+    		db.execSQL(getCreateTableSql(tableName));	
+    	}
+  }
+   
+   
+    
     public void recreateDb(SQLiteDatabase db) {
-        Log.d(TAG, "drop existing tables");
-        String orderTableName = SchemaUtil.getTableName(LeafContract.Order.RESOURCE_NAME);
-        db.execSQL(getDropTableSql(orderTableName));
-        String printerTableName = SchemaUtil.getTableName(LeafContract.Printer.RESOURCE_NAME);
-        db.execSQL(getDropTableSql(printerTableName));
+        Log.d(TAG, "reset tables");
+        
+        recreateTable(db,LeafContract.Order.RESOURCE_NAME);
+        recreateTable(db,LeafContract.Printer.RESOURCE_NAME);
+        recreateTable(db,LeafContract.CatalogItem.TABLE_NAME);
+        recreateTable(db,LeafContract.CatalogItemModifier.TABLE_NAME);
         onCreate(db);
     }
+    
     
 }

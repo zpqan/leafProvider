@@ -9,13 +9,14 @@ import com.leaf.client.util.DataModelUtils;
 public class LineItemModifier extends BaseModel {
 	private static final String CATALOG_ITEM_MODIFIER_ID = "catalog_item_modifier_id";
 	private static final String LINE_ITEM_ID = "line_item_id";
-	private static final String LINE_ITEM_UUID = "line_item_uuid";
+
 	private static final String NAME = "name";
 	private static final String NOTES = "notes";
 	private static final String PRICE = "price";
 	private static final String QUANTITY = "quantity";
 	private static final String SITE_ID = "site_id";
 
+	private String lineItemUUId;
 	public LineItemModifier() {
 		super();
 	}
@@ -42,11 +43,11 @@ public class LineItemModifier extends BaseModel {
 	}
 	
 	public String getLine_item_uuid() {
-		return DataModelUtils.getStringFromJson(jsonObject, LINE_ITEM_UUID);
+		return this.lineItemUUId;
 	}
 
 	public void setLine_item_uuid(String line_item_uuid) {
-		DataModelUtils.put(jsonObject, LINE_ITEM_UUID, line_item_uuid);
+		this.lineItemUUId = line_item_uuid;
 	}
 
 
@@ -91,7 +92,7 @@ public class LineItemModifier extends BaseModel {
 	}
 
 	public boolean isIncludedInRestCall() {
-		if ( !getDirty() && !getDeleted() && getId() == null) {
+		if ( getId() == null) {
 			return true;
 		}
 		if ( getDirty() || getDeleted()) {
@@ -99,10 +100,15 @@ public class LineItemModifier extends BaseModel {
 		}
 		return false;
 	}
+	
+	public void trimForRestCall() {
+		if (getId() == null)
+			setDirty(false);
+	}
 
-	public static LineItemModifier fromLineItemModifierPatch(
-			JSONObject patch) {
-		LineItemModifier lim = new LineItemModifier();
+//	public static LineItemModifier fromLineItemModifierPatch(
+//			JSONObject patch) {
+//		LineItemModifier lim = new LineItemModifier();
 //		LineItemModifierPatch {
 //			line_item_id (integer, optional),
 //			catalog_item_modifier_id (integer, optional),
@@ -122,12 +128,12 @@ public class LineItemModifier extends BaseModel {
 //			quantity (number, optional),
 //			notes (string, optional)
 //			}
-
-		lim.setCatalog_item_modifier_id(DataModelUtils.getIntegerFromJson(patch, LINE_ITEM_ID));
-
-		lim.setCatalog_item_modifier_id(DataModelUtils.getIntegerFromJson(patch, CATALOG_ITEM_MODIFIER_ID));
-		lim.setQuantity(DataModelUtils.getBigDecimalFromJson(patch, QUANTITY));
-		lim.setNotes(DataModelUtils.getStringFromJson(patch, NOTES));
-		return lim;
-	}
+//
+//		lim.setCatalog_item_modifier_id(DataModelUtils.getIntegerFromJson(patch, LINE_ITEM_ID));
+//
+//		lim.setCatalog_item_modifier_id(DataModelUtils.getIntegerFromJson(patch, CATALOG_ITEM_MODIFIER_ID));
+//		lim.setQuantity(DataModelUtils.getBigDecimalFromJson(patch, QUANTITY));
+//		lim.setNotes(DataModelUtils.getStringFromJson(patch, NOTES));
+//		return lim;
+//	}
 }

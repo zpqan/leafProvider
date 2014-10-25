@@ -7,7 +7,6 @@ import com.leaf.client.util.DataModelUtils;
 import com.leaf.leafData.provider.LeafDbHelper;
 
 
-
 public abstract class BaseModel {
 	private static final String ID = "id";
 	private static final String DIRTY = "dirty";
@@ -39,10 +38,10 @@ public abstract class BaseModel {
 	}
 	
 	protected void init() {
-		if (!jsonObject.has("sync")) {
+		if (!jsonObject.has(SYNC)) {
 			JSONObject syncObject = new JSONObject();
 			try {
-				jsonObject.put("sync", syncObject);
+				jsonObject.put(SYNC, syncObject);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

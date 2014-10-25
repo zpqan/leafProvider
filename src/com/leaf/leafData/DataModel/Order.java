@@ -94,6 +94,7 @@ public class Order extends BaseModel {
 		JSONObject discountJson = DataModelUtils.getJSONObjectFromArray(discounts, 0);
 		if ( discountJson != null) {
 			discount = new Discount(discountJson);
+			setDiscount(discount);
 		}
 		setDiscounts(null);
 	}
@@ -259,7 +260,7 @@ public class Order extends BaseModel {
 		discount = value;
 		if ( discount != null) {
 			discount.setSite_id(getSite_id());
-			discount.setLine_item_id(getId());
+			discount.setOrder_id(getId());
 			discountJson = discount.getJsonObject();
 		}
 		DataModelUtils.put(jsonObject, DISCOUNT, discountJson);
@@ -295,8 +296,6 @@ public class Order extends BaseModel {
 			createRequest.putOpt(SERVE_TIME, this.getServe_time());
 			createRequest.putOpt(NUM_GUESTS, this.getNumGuests());
 			createRequest.putOpt(_UUID, getUuid());
-// TODO			tab_name (string, optional),
-// TODO			table_id (integer, optional),
 		} catch (JSONException e) {
 			Log.e(TAG, "getCreateRequest failed", e);
 		}
@@ -412,6 +411,7 @@ public class Order extends BaseModel {
 		List<LineItem> list = new ArrayList<LineItem>();
 		for (LineItem lineItem : getLine_items()) {
 			if ( lineItem.isIncludedInRestCall() ){
+				lineItem.trimForRestCall();
 				list.add(lineItem);
 			}
 		}
@@ -424,7 +424,7 @@ public class Order extends BaseModel {
 		if ( lineItemId != null) {
 			lineItem = findLineItemById(lineItemId);
 		} else {
-			lineItem = findLineItemByUuid(modifier.getUuid());
+			lineItem = findLineItemByUuid(modifier.getLine_item_uuid());
 		}
 		lineItem.addLineItemModifier(modifier);
 	}
@@ -450,7 +450,7 @@ public class Order extends BaseModel {
 		}
 		throw new IllegalArgumentException("can not find line item with id: " + uuid);
 	}
-	
+
 	public Order copySubItems(Order src) {
 		Integer orderId = this.getId();
 		LineItem[] line_items = src.getLine_items();

@@ -52,7 +52,7 @@ public class LeafProvider extends ContentProvider {
 
 	@Override
 	public int delete(Uri uri, String whereClause, String[] whereValues) {
-		//Log.i(TAG, " delete uri: " + uri +  "where " + whereClause + "  " + whereValues[0]);
+		Log.i(TAG, " delete uri: " + uri );
 		if (uri == null)
 			throw new IllegalArgumentException("delete called with null Uri ");
 		
@@ -76,13 +76,18 @@ public class LeafProvider extends ContentProvider {
 			throw new IllegalArgumentException("called with null Uri ");	
 		}
 		String resourceName = getPathName(uri);
-		String tableName = SchemaUtil.getTableName(resourceName);
+		String tableName = resourceName;
+		if ( resourceName.equals(LeafContract.Order.RESOURCE_NAME) ||
+				resourceName.equals(LeafContract.Printer.RESOURCE_NAME)){
+			tableName = SchemaUtil.getTableName(resourceName);
+		}
 		return tableName;
 	}
 	
 	private String getPathName(Uri uri) {
 		return uri.getPathSegments().get(0);
 	}
+
 
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {

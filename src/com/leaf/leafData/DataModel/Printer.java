@@ -97,4 +97,10 @@ public class Printer extends BaseModel {
 		DataModelUtils.put(jsonObject, PRINTER_TYPE, printer_type);
 	}
 	
+	public void trimForRestCall() {
+		if ( getId() != null) {
+			jsonObject.remove(NAME);
+		}
+	}
+	
 }
